@@ -7,13 +7,13 @@
     <style>
         :root {
             --bg-light: #ffffff;
-            --bg-soft: #fbf7f4;       /* Rosa arena/nude muy sutil y amigable */
-            --text-dark: #333333;      /* Gris orgánico suave para lectura fácil */
-            --text-muted: #666666;
-            --accent-cozy: #dca794;    /* Terracota/Rosa viejo estético para resaltar */
+            --bg-soft: #fbf7f4;       
+            --text-dark: #2d2d2d;      
+            --text-muted: #5a5a5a;
+            --accent-cozy: #dca794;    
             --accent-hover: #cb937f;
-            --shadow-clean: 0 8px 24px rgba(220, 167, 148, 0.06);
-            --radius-soft: 20px;
+            --shadow-clean: 0 10px 30px rgba(220, 167, 148, 0.08);
+            --radius-soft: 24px;
         }
 
         * {
@@ -27,64 +27,70 @@
         body {
             background-color: var(--bg-light);
             color: var(--text-dark);
-            line-height: 1.8;
+            line-height: 1.6;
             font-size: 1.05rem;
         }
 
-        /* --- CINTILLA SUPERIOR DE AVISO --- */
+        /* --- CINTILLA SUPERIOR --- */
         .announcement-bar {
             background: #f4eae4;
             color: #8f6a5e;
             text-align: center;
             padding: 0.7rem;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.85rem;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
 
-        /* --- SECCIÓN HERO --- */
+        /* --- SECCIÓN HERO CON FONDO DE PIEZAS DE CONCRETO --- */
         .hero-section {
-            padding: 6rem 1.5rem 5rem 1.5rem;
+            position: relative;
+            padding: 8rem 1.5rem;
             text-align: center;
-            background: linear-gradient(180deg, var(--bg-soft) 0%, var(--bg-light) 100%);
+            background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #ffffff;
         }
 
         .hero-pill {
-            background-color: #ffffff;
-            color: var(--accent-cozy);
-            border: 1px solid #f4eae4;
-            padding: 0.5rem 1.5rem;
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 0.6rem 1.8rem;
             border-radius: 50px;
             font-weight: 600;
             font-size: 0.85rem;
             display: inline-block;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             letter-spacing: 0.5px;
             text-transform: uppercase;
         }
 
         .hero-section h1 {
-            font-size: 3rem;
-            line-height: 1.3;
+            font-size: 3.2rem;
+            line-height: 1.25;
             margin-bottom: 1.5rem;
-            color: var(--text-dark);
-            font-weight: 700;
-            max-width: 900px;
+            font-weight: 800;
+            max-width: 950px;
             margin-left: auto;
             margin-right: auto;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
 
         .hero-section h1 span { 
-            color: #b87b66;
-            display: inline-block;
+            color: #ffccbc;
         }
 
         .hero-section p {
-            font-size: 1.25rem;
-            max-width: 700px;
+            font-size: 1.3rem;
+            max-width: 750px;
             margin: 0 auto 3.5rem auto;
-            color: var(--text-muted);
+            color: #f5f5f5;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
         }
 
         /* --- BOTÓN DE COMPRA --- */
@@ -92,12 +98,12 @@
             display: inline-block;
             background-color: var(--accent-cozy);
             color: white;
-            padding: 1.2rem 4rem;
+            padding: 1.3rem 4.5rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 1.25rem;
-            box-shadow: 0 10px 25px rgba(220, 167, 148, 0.3);
+            font-size: 1.3rem;
+            box-shadow: 0 10px 25px rgba(220, 167, 148, 0.4);
             transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -105,85 +111,102 @@
 
         .btn-cozy:hover {
             background-color: var(--accent-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 12px 30px rgba(220, 167, 148, 0.45);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(220, 167, 148, 0.6);
         }
 
         /* --- ESTRUCTURA GENERAL --- */
         .main-container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 4rem 1.5rem;
+            padding: 5rem 1.5rem;
         }
 
         .block-title {
             text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 4rem;
+            font-size: 2.4rem;
+            margin-bottom: 3.5rem;
             color: var(--text-dark);
-            font-weight: 700;
+            font-weight: 800;
         }
 
         .block-title span {
             color: var(--accent-cozy);
         }
 
-        /* --- QUÉ VAS A APRENDER --- */
+        /* --- DIAGRAMA DE APRENDIZAJE (OPTIMIZADO) --- */
         .grid-learning {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-            margin-bottom: 6rem;
+            gap: 2rem;
         }
 
         .card-learning {
             background: var(--bg-soft);
-            padding: 2.5rem;
+            padding: 2.2rem;
             border-radius: var(--radius-soft);
             box-shadow: var(--shadow-clean);
-            transition: transform 0.3s ease;
+            border: 1px solid rgba(220, 167, 148, 0.15);
+            transition: all 0.3s ease;
         }
 
         .card-learning:hover {
             transform: translateY(-5px);
+            background: #ffffff;
+            border-color: var(--accent-cozy);
         }
 
         .card-learning .icon-pill {
             background: #ffffff;
-            width: 50px;
-            height: 50px;
+            width: 55px;
+            height: 55px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
-            font-size: 1.5rem;
+            border-radius: 16px;
+            font-size: 1.6rem;
             margin-bottom: 1.5rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
         }
 
         .card-learning h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
             color: var(--text-dark);
+            font-weight: 700;
         }
 
-        .card-learning p {
+        .card-learning ul {
+            list-style: none;
+        }
+
+        .card-learning ul li {
             font-size: 0.98rem;
             color: var(--text-muted);
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
         }
 
-        /* --- GALERÍA DE TRABAJOS --- */
+        .card-learning ul li::before {
+            content: "✓";
+            color: #b87b66;
+            font-weight: bold;
+        }
+
+        /* --- GALERÍA DE DISEÑOS (ESTILO PINTEREST) --- */
         .gallery-wrapper {
             background-color: var(--bg-soft);
             padding: 5rem 1.5rem;
             border-radius: 40px;
-            margin-bottom: 6rem;
+            margin: 2rem 0;
         }
 
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
+            gap: 2rem;
         }
 
         .gallery-box {
@@ -191,51 +214,76 @@
             border-radius: var(--radius-soft);
             overflow: hidden;
             box-shadow: var(--shadow-clean);
+            transition: transform 0.3s;
+        }
+
+        .gallery-box:hover {
+            transform: scale(1.02);
         }
 
         .gallery-box img {
             width: 100%;
-            height: 360px;
+            height: 380px;
             object-fit: cover;
         }
 
         .gallery-box .info-label {
-            padding: 1.5rem;
+            padding: 1.3rem;
             text-align: center;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--text-dark);
             font-size: 1.05rem;
+            border-top: 1px solid #f4eae4;
         }
 
-        /* --- BENEFICIOS --- */
+        /* --- GRID DE BENEFICIOS RESUMIDO Y LLAMATIVO --- */
         .grid-benefits {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 6rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
         }
 
         .card-benefit {
             padding: 2rem;
             background: #ffffff;
-            border: 1px solid #f4eae4;
+            border: 2px solid #f4eae4;
             border-radius: var(--radius-soft);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .card-benefit:hover {
+            background: #faf5f2;
+            border-color: var(--accent-cozy);
+        }
+
+        .card-benefit .benefit-badge {
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
+            display: block;
         }
 
         .card-benefit h4 {
             color: #b87b66;
-            font-size: 1.15rem;
+            font-size: 1.25rem;
+            font-weight: 700;
             margin-bottom: 0.5rem;
+        }
+
+        .card-benefit p {
+            font-size: 1rem;
+            color: var(--text-dark);
+            font-weight: 600;
         }
 
         /* --- CONTADOR --- */
         .urgency-container {
             background: #fdfaf7;
-            border: 1px dashed var(--accent-cozy);
+            border: 2px dashed var(--accent-cozy);
             border-radius: var(--radius-soft);
             padding: 3rem 2rem;
             text-align: center;
-            margin-bottom: 6rem;
+            margin: 4rem 0;
         }
 
         .timer-box {
@@ -248,11 +296,11 @@
         .timer-element {
             background: #ffffff;
             padding: 0.8rem 1.5rem;
-            border-radius: 12px;
-            font-size: 1.8rem;
-            font-weight: 700;
+            border-radius: 14px;
+            font-size: 2rem;
+            font-weight: 800;
             color: var(--text-dark);
-            min-width: 90px;
+            min-width: 95px;
             box-shadow: var(--shadow-clean);
         }
 
@@ -260,7 +308,7 @@
             display: block;
             font-size: 0.8rem;
             color: var(--text-muted);
-            font-weight: normal;
+            font-weight: 600;
             text-transform: uppercase;
             margin-top: 0.2rem;
         }
@@ -271,7 +319,7 @@
             border: 1px solid #f4eae4;
             padding: 4rem 3rem;
             border-radius: var(--radius-soft);
-            margin-bottom: 6rem;
+            margin-bottom: 5rem;
             box-shadow: var(--shadow-clean);
         }
 
@@ -287,16 +335,17 @@
 
         .module-item {
             background: var(--bg-soft);
-            border-radius: 14px;
+            border-radius: 16px;
             padding: 2rem;
         }
 
         .module-item h4 {
             color: var(--text-dark);
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             margin-bottom: 1rem;
-            border-bottom: 1px solid #ebdcd6;
+            border-bottom: 2px solid #ebdcd6;
             padding-bottom: 0.5rem;
+            font-weight: 700;
         }
 
         .module-item ul {
@@ -306,7 +355,7 @@
         .module-item ul li {
             font-size: 0.98rem;
             color: var(--text-muted);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -321,7 +370,7 @@
             box-shadow: var(--shadow-clean);
             border: 1px solid #f4eae4;
             padding: 2.5rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
             display: grid;
             grid-template-columns: 0.8fr 1.2fr;
             gap: 3rem;
@@ -336,7 +385,7 @@
             width: 100%;
             height: 260px;
             object-fit: cover;
-            border-radius: 14px;
+            border-radius: 16px;
         }
 
         .bono-visual-tag {
@@ -355,6 +404,7 @@
             font-size: 1.4rem;
             color: var(--text-dark);
             margin-bottom: 1rem;
+            font-weight: 700;
         }
 
         .bono-visual-card p {
@@ -364,31 +414,33 @@
 
         .bono-free-label {
             color: #b87b66;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.95rem;
             margin-top: 1.2rem;
         }
 
-        /* --- CHECKOUT --- */
+        /* --- CAJA DE PRECIO ACTUALIZADA ($30) --- */
         .checkout-panel {
             background: var(--bg-soft);
-            border-radius: 32px;
+            border-radius: 36px;
             padding: 4.5rem 2rem;
             text-align: center;
             max-width: 800px;
-            margin: 6rem auto;
+            margin: 5rem auto;
             box-shadow: var(--shadow-clean);
+            border: 2px solid rgba(220, 167, 148, 0.2);
         }
 
         .price-old {
             text-decoration: line-through;
             color: #b3a7a2;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
+            font-weight: 600;
         }
 
         .price-new {
-            font-size: 4.8rem;
-            font-weight: 700;
+            font-size: 5.5rem;
+            font-weight: 900;
             color: var(--text-dark);
             margin: 0.5rem 0 2rem 0;
             line-height: 1;
@@ -399,7 +451,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-bottom: 6rem;
+            margin-bottom: 5rem;
         }
 
         .review-card {
@@ -416,7 +468,7 @@
             display: flex;
             align-items: center;
             gap: 3rem;
-            margin-bottom: 6rem;
+            margin-bottom: 5rem;
         }
 
         @media (max-width: 768px) { .guarantee-box { flex-direction: column; text-align: center; padding: 2rem 1.5rem; } }
@@ -426,27 +478,26 @@
             background: #ffffff;
             border: 1px solid #f4eae4;
             padding: 1.8rem 2rem;
-            border-radius: 12px;
+            border-radius: 14px;
             margin-bottom: 1.2rem;
             box-shadow: var(--shadow-clean);
         }
 
-        .faq-card h4 { color: var(--text-dark); margin-bottom: 0.5rem; font-size: 1.1rem; }
+        .faq-card h4 { color: var(--text-dark); margin-bottom: 0.5rem; font-size: 1.15rem; font-weight: 700; }
         .faq-card p { color: var(--text-muted); font-size: 0.98rem; }
     </style>
 </head>
 <body>
 
-    <!-- AVISO SUPERIOR INICIAL -->
     <div class="announcement-bar">
         Aprovecha la oportunidad: Cupos con el 50% de descuento disponibles por tiempo limitado
     </div>
 
-    <!-- SECCIÓN HERO DE BIENVENIDA -->
+    <!-- SECCIÓN HERO CON FONDO ESTÉTICO -->
     <section class="hero-section">
         <div class="hero-pill">Programa Online • Aprende desde casa a tu propio ritmo</div>
         <h1>En 14 días lograrás crear <span>piezas únicas en concreto</span> y descubrir cómo transformarlas en tu propio negocio</h1>
-        <p>Aprende detalladamente las mejores técnicas artesanales y aprovecha las tendencias decorativas actuales. Todo explicado desde cero sin necesidad de conocimientos previos.</p>
+        <p>Aprende detalladamente las mejores técnicas artesanales y aprovecha las tendencias decorativas actuales sin conocimientos previos.</p>
         
         <div>
             <a href="https://pay.hotmart.com/E100486464F?off=jbpevbxo&checkoutMode=10&bid=1781489881868" class="btn-cozy" target="_blank" rel="noopener">
@@ -455,62 +506,85 @@
         </div>
     </section>
 
-    <!-- CONTENEDOR CENTRAL DE LA PÁGINA -->
     <div class="main-container">
 
-        <!-- QUÉ VAS A APRENDER -->
+        <!-- ¿QUÉ VAS A APRENDER? - DIAGRAMA RESUMIDO -->
         <h2 class="block-title">¿Qué vas a <span>aprender</span>?</h2>
         <div class="grid-learning">
             <div class="card-learning">
                 <div class="icon-pill">🏺</div>
                 <h3>Creación de Piezas Únicas</h3>
-                <p>Aprenderás a elaborar objetos decorativos de gran calidad como bandejas, jarrones, portavelas, topepuertas, joyeros, materas, incensarios y portaespejos.</p>
+                <ul>
+                    <li>Bandejas, jarrones y portavelas.</li>
+                    <li>Joyeros, macetas e incensarios.</li>
+                    <li>Acabados listos para lucir o vender.</li>
+                </ul>
             </div>
             <div class="card-learning">
                 <div class="icon-pill">🛠️</div>
                 <h3>Técnicas de Acabado Pulido</h3>
-                <p>Aprenderás a dominar los procesos de vaciado y nivelación fina para asegurar que cada una de tus piezas tenga un acabado suave y comercial.</p>
+                <ul>
+                    <li>Dominio completo del vaciado.</li>
+                    <li>Nivelación fina y precisa.</li>
+                    <li>Eliminación de imperfecciones y burbujas.</li>
+                </ul>
             </div>
             <div class="card-learning">
                 <div class="icon-pill">🎨</div>
                 <h3>Personalización y Color</h3>
-                <p>Aprenderás a intervenir estéticamente tus objetos aplicando pinturas de forma limpia para adaptarlos por completo a los gustos de tus clientes.</p>
+                <ul>
+                    <li>Intervención estética de objetos.</li>
+                    <li>Aplicación limpia de pinturas.</li>
+                    <li>Adaptación a los gustos del cliente.</li>
+                </ul>
             </div>
             <div class="card-learning">
                 <div class="icon-pill">🌈</div>
                 <h3>Efectos y Texturas Modernas</h3>
-                <p>Aprenderás a añadir color desde la masa inicial para lograr efectos populares como el microterrazo, terrazo, granito y la técnica del swirling.</p>
+                <ul>
+                    <li>Coloración desde la masa inicial.</li>
+                    <li>Efecto <strong>Microterrazo y Granito</strong>.</li>
+                    <li>Técnicas artísticas de <strong>Swirling</strong>.</li>
+                </ul>
             </div>
             <div class="card-learning">
                 <div class="icon-pill">📊</div>
                 <h3>Gestión Financiera de Costos</h3>
-                <p>Aprenderás a ajustar de manera sencilla tus costos de insumos y a fijar precios de venta que te garanticen márgenes saludables.</p>
+                <ul>
+                    <li>Cálculo sencillo de insumos.</li>
+                    <li>Fijación de precios competitivos.</li>
+                    <li>Estrategias para márgenes saludables.</li>
+                </ul>
             </div>
             <div class="card-learning">
                 <div class="icon-pill">📲</div>
                 <h3>Estrategia en Canales Digitales</h3>
-                <p>Descubrirás cómo exhibir de forma amigable tu portafolio de productos en redes sociales para conectar de manera orgánica con tus primeros compradores.</p>
+                <ul>
+                    <li>Creación de portafolio estético.</li>
+                    <li>Exhibición orgánica en redes sociales.</li>
+                    <li>Atracción de tus primeros compradores.</li>
+                </ul>
             </div>
         </div>
 
-    </div> <!-- FIN CONTAINER PRIMER BLOQUE -->
+    </div> 
 
 
-    <!-- GALERÍA DE DISEÑOS REALIZADOS -->
+    <!-- GALERÍA ESTILO PINTEREST -->
     <div class="gallery-wrapper">
         <div class="main-container" style="padding: 0 1.5rem;">
             <h2 class="block-title">Algunos de los diseños que <span>lograrás realizar:</span></h2>
             <div class="gallery-grid">
                 <div class="gallery-box">
-                    <img src="https://manualidadesconestilo.github.io/Piezasdeconcreto/imagenes/imagen1.jpg" alt="Macetas y Portavelas Artesanales">
+                    <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=500&q=80" alt="Macetas Minimalistas de Concreto">
                     <div class="info-label">Macetas y Portavelas Minimalistas</div>
                 </div>
                 <div class="gallery-box">
-                    <img src="https://manualidadesconestilo.github.io/Piezasdeconcreto/imagenes/imagen2.jpg" alt="Kits y Bandejas Premium">
+                    <img src="https://images.unsplash.com/photo-1606744824163-985d376605aa?auto=format&fit=crop&w=500&q=80" alt="Bandejas de Cemento de Tendencia">
                     <div class="info-label">Bandejas Organizadoras de Tendencia</div>
                 </div>
                 <div class="gallery-box">
-                    <img src="https://manualidadesconestilo.github.io/Piezasdeconcreto/imagenes/imagen3.jpg" alt="Técnicas de Pigmentación">
+                    <img src="https://images.unsplash.com/photo-1578500494198-246f612d3b3d?auto=format&fit=crop&w=500&q=80" alt="Texturas Finas de Cemento">
                     <div class="info-label">Efectos de Coloración y Texturas Finas</div>
                 </div>
             </div>
@@ -520,45 +594,51 @@
 
     <div class="main-container" style="padding-top: 0;">
 
-        <!-- BENEFICIOS DEL CURSO -->
+        <!-- BENEFICIOS DEL CURSO RESUMIDOS -->
         <h2 class="block-title">Beneficios de estudiar con <span>nosotros:</span></h2>
         <div class="grid-benefits">
             <div class="card-benefit">
+                <span class="benefit-badge">♾️</span>
                 <h4>Acceso Permanente</h4>
-                <p>Disfruta de las clases sin límites. La plataforma estará disponible de por vida para repasar cuando gustes.</p>
+                <p>Plataforma disponible de por vida.</p>
             </div>
             <div class="card-benefit">
-                <h4>Flexibilidad en Horarios</h4>
-                <p>Estudia cómodamente desde tu hogar en el momento libre que mejor se adapte a tu rutina diaria.</p>
+                <span class="benefit-badge">🏡</span>
+                <h4>Flexibilidad Total</h4>
+                <p>Estudia a tu propio ritmo desde casa.</p>
             </div>
             <div class="card-benefit">
-                <h4>Acompañamiento en el Proceso</h4>
-                <p>Resuelve dudas técnicas para asegurar que tus primeras piezas queden perfectas y sin imperfecciones.</p>
+                <span class="benefit-badge">🤝</span>
+                <h4>Acompañamiento</h4>
+                <p>Resolución de dudas técnicas.</p>
             </div>
             <div class="card-benefit">
+                <span class="benefit-badge">💰</span>
                 <h4>Inversión Eficiente</h4>
-                <p>Capacítate por completo con un programa detallado a una fracción del costo de un taller presencial.</p>
+                <p>Menor costo que un taller presencial.</p>
             </div>
             <div class="card-benefit">
-                <h4>Retorno a Corto Plazo</h4>
-                <p>La salida comercial de estos productos te permitirá recuperar lo invertido con tus primeras piezas vendidas.</p>
+                <span class="benefit-badge">📈</span>
+                <h4>Retorno Corto Plazo</h4>
+                <p>Recupera lo invertido con tus ventas.</p>
             </div>
             <div class="card-benefit">
-                <h4>Certificado Incluido</h4>
-                <p>Al completar el temario propuesto podrás descargar tu constancia digital de participación dentro del curso.</p>
+                <span class="benefit-badge">🎓</span>
+                <h4>Certificado</h4>
+                <p>Constancia digital de participación.</p>
             </div>
         </div>
 
-        <!-- RELOJ / CAJA DE TIEMPO -->
+        <!-- RELOJ -->
         <div class="urgency-container">
-            <h3 style="font-size: 1.5rem; color: var(--text-dark); font-weight: 700;">Promoción de lanzamiento activa</h3>
-            <p style="color: var(--text-muted); margin-top: 0.3rem;">Asegura tu entrada hoy con el 50% de descuento y añade todo el material complementario gratis.</p>
+            <h3 style="font-size: 1.6rem; color: var(--text-dark); font-weight: 800;">Promoción de lanzamiento activa</h3>
+            <p style="color: var(--text-muted); margin-top: 0.3rem; font-weight: 600;">Asegura tu entrada hoy con el 50% de descuento y añade todo el material complementario gratis.</p>
             <div class="timer-box">
                 <div class="timer-element">02<span>Horas</span></div>
                 <div class="timer-element">41<span>Minutos</span></div>
                 <div class="timer-element">46<span>Segundos</span></div>
             </div>
-            <p style="font-size: 0.95rem; font-weight: 600; color: #b87b66;">Inscripciones habilitadas en tarifa especial</p>
+            <p style="font-size: 1rem; font-weight: 700; color: #b87b66;">Inscripciones habilitadas en tarifa especial</p>
         </div>
 
         <!-- TEMARIO DETALLADO -->
@@ -689,7 +769,7 @@
                 <div>
                     <div class="bono-visual-tag">Bono Especial 4</div>
                     <h3>Lecciones de Posicionamiento y Venta Digital</h3>
-                    <p>Aprende a instruir un perfil de marca estético, tomar fotografías atractivas con luz de día y redactar textos sencillos que atraigan seguidores e interesados.</p>
+                    <p>Aprende a estructurar un perfil de marca estético, tomar fotografías atractivas con luz de día y redactar textos sencillos que atraigan seguidores e interesados.</p>
                     <div class="bono-free-label">Incluido de forma gratuita</div>
                 </div>
             </div>
@@ -726,20 +806,20 @@
 
         </div>
 
-        <!-- PANEL FINAL DE PRECIO -->
+        <!-- PANEL FINAL DE PRECIO CORREGIDO A 30 DÓLARES -->
         <div class="checkout-panel">
-            <h3 style="font-size: 1.6rem; color: var(--text-dark); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Acceso Completo al Programa</h3>
-            <p style="color: var(--text-muted); margin: 0.5rem 0 2rem 0;">Todas las videolecciones estructuradas, guías descargables y bonos de regalo con un único pago.</p>
+            <h3 style="font-size: 1.6rem; color: var(--text-dark); font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">Acceso Completo al Programa</h3>
+            <p style="color: var(--text-muted); margin: 0.5rem 0 2rem 0; font-weight: 600;">Todas las videolecciones estructuradas, guías descargables y bonos de regalo con un único pago.</p>
             
             <div class="price-old">Precio regular: $150 USD</div>
-            <div class="price-new">$37 USD</div>
+            <div class="price-new">$30 USD</div>
             
             <div style="margin-top: 2rem;">
                 <a href="https://pay.hotmart.com/E100486464F?off=jbpevbxo&checkoutMode=10&bid=1781489881868" class="btn-cozy" target="_blank" rel="noopener" style="display: block; max-width: 500px; margin: 0 auto;">
                     Inscribirme al programa ahora
                 </a>
             </div>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 2rem;">🔒 Entorno de inscripción seguro. Tu acceso se envía de inmediato al correo.</p>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 2rem; font-weight: 600;">🔒 Entorno de inscripción seguro. Tu acceso se envía de inmediato al correo.</p>
         </div>
 
         <!-- TESTIMONIOS -->
@@ -792,7 +872,7 @@
             </div>
         </div>
 
-    </div> <!-- FIN CONTENEDOR WRAPPER -->
+    </div> 
 
     <!-- FOOTER -->
     <footer style="background: #ffffff; color: #999999; text-align: center; padding: 3.5rem 1.5rem; font-size: 0.85rem; border-top: 1px solid #f4eae4;">
