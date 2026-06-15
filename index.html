@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Piezas de Concreto - Diseño y Decoración</title>
+    <title>Masterclass: Concreto Creativo - Aprende y Emprende</title>
     <style>
-        /* --- VARIABLES DE COLOR Y FUENTES --- */
+        /* --- VARIABLES DE DISEÑO EMOCIONAL DE VENTAS --- */
         :root {
-            --primary-color: #2b2d42; /* Gris oscuro elegante */
-            --accent-color: #8d99ae;  /* Gris cemento para detalles */
-            --cta-color: #e63946;     /* Color de contraste para botones */
-            --bg-light: #f8f9fa;      /* Fondo claro para secciones */
-            --text-dark: #1a1a1a;     /* Texto principal */
-            --text-light: #f8f9fa;    /* Texto sobre fondo oscuro */
-            --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            --primary: #111827;     /* Gris casi negro, profesional */
+            --accent: #ff4757;      /* Rojo vibrante para botones de compra (Urgencia) */
+            --yellow: #ffa502;      /* Amarillo para destacar bonos y estrellitas */
+            --bg-light: #f3f4f6;    /* Fondo limpio */
+            --text-dark: #1f2937;
+            --text-light: #ffffff;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', system-ui, sans-serif;
             scroll-behavior: smooth;
         }
 
@@ -30,238 +30,292 @@
             line-height: 1.6;
         }
 
-        /* --- BARRA DE NAVEGACIÓN --- */
-        header {
-            background-color: rgba(255, 255, 255, 0.95);
-            padding: 1rem 2rem;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
+        /* --- BARRA DE URGENCIA SUPERIOR --- */
+        .top-bar {
+            background-color: var(--accent);
+            color: white;
+            text-align: center;
+            padding: 0.5rem;
             font-weight: bold;
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
         }
 
-        nav a {
-            text-decoration: none;
-            color: var(--primary-color);
-            margin-left: 1.5rem;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--cta-color);
-        }
-
-        /* --- SECCIÓN DE INICIO (HERO) --- */
+        /* --- SECCIÓN HERO (Presentación del Curso) --- */
         .hero {
-            /* Usamos una de tus fotos de fondo con un filtro oscuro para que resalte el texto */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                              url('https://manualidadesconestilo.github.io/Piezasdeconcreto/imagenes/imagen3.jpg');
+            background-image: linear-gradient(rgba(17, 24, 39, 0.85), rgba(17, 24, 39, 0.9)), 
+                              url('https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            padding: 6rem 1.5rem;
             text-align: center;
             color: var(--text-light);
-            padding: 0 1rem;
+        }
+
+        .badge-online {
+            background-color: var(--yellow);
+            color: #000;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+            font-size: 2.8rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero h1 span {
+            color: var(--yellow);
         }
 
         .hero p {
-            font-size: 1.25rem;
-            max-width: 600px;
-            margin-bottom: 2rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem auto;
+            color: #d1d5db;
         }
 
-        /* --- BOTONES --- */
-        .btn {
+        /* --- BOTÓN DE COMPRA CALIENTE --- */
+        .btn-checkout {
             display: inline-block;
-            background-color: var(--cta-color);
+            background-color: var(--accent);
             color: white;
-            padding: 0.75rem 2rem;
-            border-radius: 50px;
+            padding: 1.2rem 2.5rem;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
+            font-size: 1.3rem;
             text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 15px rgba(230, 57, 70, 0.4);
+            box-shadow: 0 10px 25px rgba(255, 71, 87, 0.5);
+            transition: transform 0.2s, background-color 0.2s;
+            animation: pulse 2s infinite;
         }
 
-        .btn:hover {
-            background-color: #cb2d3a;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(230, 57, 70, 0.6);
+        .btn-checkout:hover {
+            background-color: #ff2a3b;
+            transform: scale(1.03);
         }
 
-        /* --- SECCIONES GENERALES --- */
-        section {
-            padding: 6rem 2rem 4rem 2rem;
-            max-width: 1200px;
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 71, 87, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 71, 87, 0); }
+        }
+
+        .garantia-text {
+            font-size: 0.85rem;
+            color: #9ca3af;
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* --- SECCIÓN CONTENIDO / LO QUE APRENDERÁN --- */
+        .container {
+            max-width: 1100px;
             margin: 0 auto;
+            padding: 4rem 1.5rem;
         }
 
         .section-title {
             text-align: center;
             font-size: 2.2rem;
-            color: var(--primary-color);
             margin-bottom: 3rem;
+            color: var(--primary);
+        }
+
+        .section-title span {
+            color: var(--accent);
+        }
+
+        .grid-beneficios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .beneficio-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--yellow);
+        }
+
+        .beneficio-card h3 {
+            margin-bottom: 0.8rem;
+            color: var(--primary);
+        }
+
+        /* --- SECCIÓN INCENTIVOS (BONOS) --- */
+        .bonos-section {
+            background-color: var(--primary);
+            color: white;
+            padding: 4rem 1.5rem;
+        }
+
+        .grid-bonos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .bono-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px dashed var(--yellow);
+            padding: 2rem;
+            border-radius: 12px;
             position: relative;
         }
 
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background-color: var(--cta-color);
-            margin: 10px auto 0 auto;
-            border-radius: 2px;
+        .bono-badge {
+            position: absolute;
+            top: -12px;
+            right: 15px;
+            background: var(--yellow);
+            color: black;
+            padding: 0.2rem 0.8rem;
+            font-size: 0.75rem;
+            font-weight: bold;
+            border-radius: 4px;
         }
 
-        /* --- SECCIÓN GALERÍA / PRODUCTOS --- */
-        .grid-productos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .card {
+        /* --- SECCIÓN OFERTA Y PRECIO --- */
+        .oferta-box {
             background: white;
-            border-radius: 12px;
-            overflow: hidden;
+            max-width: 600px;
+            margin: 4rem auto 0 auto;
+            padding: 3rem 2rem;
+            border-radius: 16px;
             box-shadow: var(--shadow);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .card img {
-            width: 100%;
-            height: 320px;
-            object-fit: cover; /* Esto hace que tus fotos no se deformen */
-        }
-
-        .card-content {
-            padding: 1.5rem;
-        }
-
-        .card-content h3 {
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            background-color: var(--primary-color);
-            color: var(--text-light);
             text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
-            font-size: 0.9rem;
+            border: 2px solid var(--yellow);
+        }
+
+        .precio-antes {
+            text-decoration: line-through;
+            color: #9ca3af;
+            font-size: 1.2rem;
+        }
+
+        .precio-ahora {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin: 0.5rem 0;
         }
 
         /* --- RESPONSIVO --- */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .hero p { font-size: 1.1rem; }
-            header { justify-content: center; flex-direction: column; gap: 1rem; }
-            nav a { margin: 0 0.75rem; }
-            section { padding: 5rem 1rem 2rem 1rem; }
+            .hero h1 { font-size: 2rem; }
+            .precio-ahora { font-size: 2.5rem; }
+            .btn-checkout { width: 100%; font-size: 1.1rem; padding: 1rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- BARRA DE NAVEGACIÓN -->
-    <header>
-        <div class="logo">Piezas de Concreto</div>
-        <nav>
-            <a href="#inicio">Inicio</a>
-            <a href="#galeria">Galería</a>
-            <a href="#contacto">Contacto</a>
-        </nav>
-    </header>
+    <!-- AVISO DE URGENCIA -->
+    <div class="top-bar">
+        ⚠️ ¡ATENCIÓN! 50% DE DESCUENTO DISPONIBLE HASTA HOY
+    </div>
 
-    <!-- SECCIÓN DE INICIO (HERO) -->
-    <section id="inicio" class="hero">
-        <h1>Artesanías en Concreto</h1>
-        <p>Creamos piezas únicas hechas a mano que combinan la resistencia del cemento con la delicadeza del diseño artesanal.</p>
-        <a href="#galeria" class="btn">Explorar Galería</a>
+    <!-- HERO PRINCIPAL -->
+    <section class="hero">
+        <div class="badge-online">➔ Formación 100% Online y Práctica</div>
+        <h1>Conviértete en Experto del <span>Concreto Decorativo</span> y Crea un Negocio Rentable desde Casa</h1>
+        <p>Aprende desde cero las técnicas profesionales para fabricar macetas, bandejas y mobiliario de cemento sin necesidad de herramientas costosas ni experiencia previa.</p>
+        
+        <!-- TU BOTÓN CON LINK DE AFILIADO DE HOTMART -->
+        <a href="https://concreto.academiags.com/?ref=M104346891U" class="btn-checkout" target="_blank" rel="noopener">
+            ¡Inscribirme al Programa Hoy!
+        </a>
+        
+        <div class="garantia-text">
+            🛡️ Garantía de satisfacción de 7 días • Pago 100% seguro
+        </div>
     </section>
 
-    <!-- SECCIÓN GALERÍA / PRODUCTOS -->
-    <section id="galeria">
-        <h2 class="section-title">Nuestras Creaciones</h2>
-        <div class="grid-productos">
+    <!-- LO QUE LOGRARÁS -->
+    <main class="container">
+        <h2 class="section-title">¿Qué vas a <span>Lograr</span> en este Curso?</h2>
+        <div class="grid-beneficios">
             
-            <!-- Producto 1 -->
-            <div class="card">
-                <img src="https://manualidadesconestilo.github.io/Piezasdeconcreto/imagenes/imagen1.jpg" alt="Macetas y Portavelas de Concreto">
-                <div class="card-content">
-                    <h3>Macetas y Portavelas</h3>
-                    <p>Hermosos contenedores geométricos texturizados, ideales para suculentas o velas decorativas que llenan de calidez tu hogar.</p>
-                </div>
+            <div class="beneficio-card">
+                <h3>Dominio de Mezclas</h3>
+                <p>Aprenderás la dosificación exacta para que tus piezas queden ultra resistentes, pulidas y sin molestas burbujas o fisuras.</p>
             </div>
 
-            <!-- Producto 2 -->
-            <div class="card">
-                <img src="https://manualidadesconestilo.github.io/Piezasdeconcreto/imagenes/imagen2.jpg" alt="Bandejas de Concreto">
-                <div class="card-content">
-                    <h3>Kits y Bandejas de Diseño</h3>
-                    <p>Conjuntos organizadores elegantes con acabados artesanales únicos, perfectos para cualquier rincón especial.</p>
-                </div>
+            <div class="beneficio-card">
+                <h3>Moldes y Desmolde</h3>
+                <p>Descubrirás cómo usar moldes comerciales y fabricar tus propios moldes caseros con materiales reciclados económicos.</p>
             </div>
 
-            <!-- Producto 3 -->
-            <div class="card">
-                <img src="https://manualidadesconestilo.github.io/Piezasdeconcreto/imagenes/imagen3.jpg" alt="Colección de Macetas Geométricas">
-                <div class="card-content">
-                    <h3>Colección Minimalista</h3>
-                    <p>Piezas exclusivas que juegan con las texturas naturales del concreto, diseñadas para destacar con un estilo moderno.</p>
-                </div>
+            <div class="beneficio-card">
+                <h3>Técnicas de Acabado</h3>
+                <p>Aprende secretos de pigmentación, efectos tipo mármol (terrazzo), lijado perfecto y sellado para impermeabilizar tus obras.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- SECCIÓN DE BONOS -->
+    <section class="bonos-section">
+        <h2 class="section-title" style="color: white;">Si te inscribes HOY, recibes estos <span>Bonos Gratis</span>:</h2>
+        <div class="grid-bonos">
+            
+            <div class="bono-card">
+                <div class="bono-badge">GRATIS</div>
+                <h3>Bono 1: Guía de Costos y Precios</h3>
+                <p>Aprende a calcular el costo de tus materiales para vender tus piezas con el máximo margen de ganancia.</p>
+            </div>
+
+            <div class="bono-card">
+                <div class="bono-badge">GRATIS</div>
+                <h3>Bono 2: Comunidad Privada</h3>
+                <p>Acceso directo al grupo de alumnos para resolver dudas, compartir tus avances y recibir feedback constante.</p>
             </div>
 
         </div>
     </section>
 
-    <!-- SECCIÓN CONTACTO -->
-    <section id="contacto" style="text-align: center; background-color: #fff; border-radius: 12px; box-shadow: var(--shadow); margin-bottom: 4rem; padding: 4rem 2rem;">
-        <h2 class="section-title">¿Te interesa alguna pieza?</h2>
-        <p style="margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Cada una de nuestras piezas es única debido a su naturaleza artesanal. ¡Haz tu consulta hoy mismo!</p>
-        <a href="mailto:tu-correo@ejemplo.com" class="btn">Preguntar por Disponibilidad</a>
+    <!-- CAJA DE OFERTA FINAL -->
+    <section class="container" style="padding-top: 0;">
+        <div class="oferta-box">
+            <h3 style="text-transform: uppercase; letter-spacing: 1px; color: var(--accent);">Acceso Inmediato y Para Siempre</h3>
+            <p style="margin-top: 1rem;">Curso Concreto Creativo + Todos los Bonos</p>
+            
+            <div class="precio-antes">Antes $49.99 USD</div>
+            <div class="precio-ahora">¡SÓLO $24.99 USD!</div>
+            <p style="font-size: 0.9rem; color: #6b7280; margin-bottom: 2rem;">(O el equivalente en tu moneda local)</p>
+
+            <!-- SEGUNDO BOTÓN DE COMPRA CALIENTE CON TU LINK -->
+            <a href="https://concreto.academiags.com/?ref=M104346891U" class="btn-checkout" target="_blank" rel="noopener" style="display: block;">
+                ¡SÍ, QUIERO APROVECHAR EL 50%!
+            </a>
+            
+            <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" style="height: 25px; margin-top: 1.5rem; opacity: 0.7;">
+            <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" style="height: 25px; opacity: 0.7; margin-left: 10px;">
+        </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2026 Manualidades con Estilo - Piezas de Concreto. Todos los derechos reservados.</p>
+    <!-- FOOTER REQUERIDO POR HOTMART Y FACEBOOK ADS -->
+    <footer style="background-color: var(--primary); color: #9ca3af; text-align: center; padding: 2rem; font-size: 0.8rem; border-top: 1px solid #374151;">
+        <p>Este sitio no forma parte del sitio web de Facebook o Facebook Inc. Además, este sitio NO está respaldado por Facebook de ninguna manera.</p>
+        <p style="margin-top: 1rem;">&copy; 2026 Manualidades con Estilo. Todos los derechos reservados. Tu enlace de afiliado: U104346891U</p>
     </footer>
 
 </body>
