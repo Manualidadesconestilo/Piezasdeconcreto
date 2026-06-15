@@ -8,7 +8,8 @@
         /* --- VARIABLES DE COLOR Y FUENTES --- */
         :root {
             --primary-color: #2b2d42; /* Gris oscuro elegante */
-            --accent-color: #d90429;  /* Rojo/Coral para llamados a la acción */
+            --accent-color: #8d99ae;  /* Gris cemento para detalles */
+            --cta-color: #e63946;     /* Color de contraste para botones */
             --bg-light: #f8f9fa;      /* Fondo claro para secciones */
             --text-dark: #1a1a1a;     /* Texto principal */
             --text-light: #f8f9fa;    /* Texto sobre fondo oscuro */
@@ -60,14 +61,14 @@
         }
 
         nav a:hover {
-            color: var(--accent-color);
+            color: var(--cta-color);
         }
 
         /* --- SECCIÓN DE INICIO (HERO) --- */
         .hero {
-            /* Imagen de fondo de alta calidad desde Unsplash relacionada con concreto/diseño */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), 
-                              url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80');
+            /* Usamos una de tus fotos de fondo con un filtro oscuro para que resalte el texto */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                              url('https://manualidadesconestilo.github.io/Piezasdeconcreto/imagenes/imagen3.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -85,20 +86,20 @@
             font-size: 3.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
         }
 
         .hero p {
             font-size: 1.25rem;
             max-width: 600px;
             margin-bottom: 2rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
         }
 
         /* --- BOTONES --- */
         .btn {
             display: inline-block;
-            background-color: var(--accent-color);
+            background-color: var(--cta-color);
             color: white;
             padding: 0.75rem 2rem;
             border-radius: 50px;
@@ -108,18 +109,18 @@
             font-size: 0.9rem;
             letter-spacing: 1px;
             transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 15px rgba(217, 4, 41, 0.4);
+            box-shadow: 0 4px 15px rgba(230, 57, 70, 0.4);
         }
 
         .btn:hover {
-            background-color: #b30322;
+            background-color: #cb2d3a;
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(217, 4, 41, 0.6);
+            box-shadow: 0 6px 20px rgba(230, 57, 70, 0.6);
         }
 
         /* --- SECCIONES GENERALES --- */
         section {
-            padding: 5rem 2rem;
+            padding: 6rem 2rem 4rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -137,7 +138,7 @@
             display: block;
             width: 60px;
             height: 4px;
-            background-color: var(--accent-color);
+            background-color: var(--cta-color);
             margin: 10px auto 0 auto;
             border-radius: 2px;
         }
@@ -146,7 +147,7 @@
         .grid-productos {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         .card {
@@ -164,8 +165,8 @@
 
         .card img {
             width: 100%;
-            height: 250px;
-            object-fit: cover;
+            height: 320px;
+            object-fit: cover; /* Esto hace que tus fotos no se deformen */
         }
 
         .card-content {
@@ -193,7 +194,7 @@
             .hero p { font-size: 1.1rem; }
             header { justify-content: center; flex-direction: column; gap: 1rem; }
             nav a { margin: 0 0.75rem; }
-            section { padding: 4rem 1rem; }
+            section { padding: 5rem 1rem 2rem 1rem; }
         }
     </style>
 </head>
@@ -211,9 +212,9 @@
 
     <!-- SECCIÓN DE INICIO (HERO) -->
     <section id="inicio" class="hero">
-        <h1>Diseño Exclusivo en Concreto</h1>
-        <p>Transformamos el cemento en piezas de arte y decoración únicas para tu hogar u oficina. Elegancia, durabilidad y estilo minimalista.</p>
-        <a href="#galeria" class="btn">Ver Catálogo</a>
+        <h1>Artesanías en Concreto</h1>
+        <p>Creamos piezas únicas hechas a mano que combinan la resistencia del cemento con la delicadeza del diseño artesanal.</p>
+        <a href="#galeria" class="btn">Explorar Galería</a>
     </section>
 
     <!-- SECCIÓN GALERÍA / PRODUCTOS -->
@@ -223,40 +224,39 @@
             
             <!-- Producto 1 -->
             <div class="card">
-                <!-- Imagen temporal de Unsplash (puedes cambiarla por tus fotos reales) -->
-                <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80" alt="Maceta de concreto">
+                <img src="https://manualidadesconestilo.github.io/Piezasdeconcreto/imagenes/imagen1.jpg" alt="Macetas y Portavelas de Concreto">
                 <div class="card-content">
-                    <h3>Macetas Minimalistas</h3>
-                    <p>Ideales para interiores y exteriores. Diseño geométrico que resalta la belleza de tus plantas.</p>
+                    <h3>Macetas y Portavelas</h3>
+                    <p>Hermosos contenedores geométricos texturizados, ideales para suculentas o velas decorativas que llenan de calidez tu hogar.</p>
                 </div>
             </div>
 
             <!-- Producto 2 -->
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=600&q=80" alt="Bandeja de concreto">
+                <img src="https://manualidadesconestilo.github.io/Piezasdeconcreto/imagenes/imagen2.jpg" alt="Bandejas de Concreto">
                 <div class="card-content">
-                    <h3>Bandejas y Organizadores</h3>
-                    <p>Perfectas para llaves, joyería o como base decorativa en tu sala de estar o baño.</p>
+                    <h3>Kits y Bandejas de Diseño</h3>
+                    <p>Conjuntos organizadores elegantes con acabados artesanales únicos, perfectos para cualquier rincón especial.</p>
                 </div>
             </div>
 
             <!-- Producto 3 -->
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=600&q=80" alt="Lámpara de cemento">
+                <img src="https://manualidadesconestilo.github.io/Piezasdeconcreto/imagenes/imagen3.jpg" alt="Colección de Macetas Geométricas">
                 <div class="card-content">
-                    <h3>Lámparas de Cemento</h3>
-                    <p>Iluminación industrial con acabados pulidos que añaden un toque urbano a cualquier espacio.</p>
+                    <h3>Colección Minimalista</h3>
+                    <p>Piezas exclusivas que juegan con las texturas naturales del concreto, diseñadas para destacar con un estilo moderno.</p>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- SECCIÓN CONTACTO (OPCIONAL/MUESTRA) -->
+    <!-- SECCIÓN CONTACTO -->
     <section id="contacto" style="text-align: center; background-color: #fff; border-radius: 12px; box-shadow: var(--shadow); margin-bottom: 4rem; padding: 4rem 2rem;">
-        <h2 class="section-title">¿Tienes un proyecto en mente?</h2>
-        <p style="margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Hacemos piezas personalizadas según tus necesidades de espacio y diseño. ¡Escríbenos!</p>
-        <a href="mailto:tu-correo@ejemplo.com" class="btn">Contáctanos por Email</a>
+        <h2 class="section-title">¿Te interesa alguna pieza?</h2>
+        <p style="margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Cada una de nuestras piezas es única debido a su naturaleza artesanal. ¡Haz tu consulta hoy mismo!</p>
+        <a href="mailto:tu-correo@ejemplo.com" class="btn">Preguntar por Disponibilidad</a>
     </section>
 
     <!-- FOOTER -->
