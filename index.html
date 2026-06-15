@@ -1,1 +1,451 @@
-<!DOCTYPE html> <html lang="es"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Piezas de Concreto - Programa Online</title> <style> :root { --bg-light: #ffffff; --bg-soft: #fbf7f4; --text-dark: #2d2d2d; --text-muted: #5a5a5a; --accent-cozy: #dca794; --accent-hover: #cb937f; --shadow-clean: 0 10px 30px rgba(220, 167, 148, 0.08); --radius-soft: 20px; } * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; } body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; } /* CINTILLA SUPERIOR */ .announcement-bar { background: #f4eae4; color: #8f6a5e; text-align: center; padding: 0.7rem; font-weight: 700; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; } /* 1. HERO - FONDO CON PIEZAS DE CONCRETO (image_f39ab9.png) */ .hero-section { position: relative; padding: 8rem 1.5rem; text-align: center; /* Imagen de fondo inspirada en la estética rústica y limpia de Pinterest */ background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; color: #ffffff; } .hero-pill { background-color: rgba(255, 255, 255, 0.2); backdrop-filter: blur(5px); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.3); padding: 0.6rem 1.8rem; border-radius: 50px; font-weight: 600; font-size: 0.85rem; display: inline-block; margin-bottom: 2rem; text-transform: uppercase; } .hero-section h1 { font-size: 3rem; line-height: 1.25; margin-bottom: 1.5rem; font-weight: 800; max-width: 900px; margin-left: auto; margin-right: auto; } .hero-section h1 span { color: #ffccbc; } .hero-section p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 3rem auto; color: #f5f5f5; } /* BOTÓN PRINCIPAL LLAMATIVO */ .btn-cozy { display: inline-block; background-color: var(--accent-cozy); color: white; padding: 1.2rem 4rem; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.25rem; box-shadow: 0 10px 25px rgba(220, 167, 148, 0.4); transition: all 0.3s ease; text-transform: uppercase; } .btn-cozy:hover { background-color: var(--accent-hover); transform: translateY(-2px); } /* ESTRUCTURA DE CONTENIDOS */ .main-container { max-width: 1100px; margin: 0 auto; padding: 5rem 1.5rem; } .block-title { text-align: center; font-size: 2.3rem; margin-bottom: 3.5rem; font-weight: 800; } .block-title span { color: var(--accent-cozy); } /* 2. DIAGRAMA DE APRENDIZAJE RESUMIDO (image_f32a7b.png) */ .grid-learning { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; } .card-learning { background: var(--bg-soft); padding: 2rem; border-radius: var(--radius-soft); box-shadow: var(--shadow-clean); border: 1px solid rgba(220, 167, 148, 0.15); transition: transform 0.3s ease; } .card-learning:hover { transform: translateY(-5px); background: #ffffff; } .card-learning .icon-pill { background: #ffffff; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 12px; font-size: 1.5rem; margin-bottom: 1.2rem; box-shadow: 0 4px 10px rgba(0,0,0,0.02); } .card-learning h3 { font-size: 1.25rem; margin-bottom: 1rem; font-weight: 700; } .card-learning ul { list-style: none; } .card-learning ul li { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 8px; } .card-learning ul li::before { content: "✓"; color: #b87b66; font-weight: bold; } /* 3. GALERÍA RECIÉN AGREGADA (INSPIRADA EN PINTEREST) */ .gallery-wrapper { background-color: var(--bg-soft); padding: 5rem 1.5rem; border-radius: 30px; margin: 4rem 0; } .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; } .gallery-box { background: #ffffff; border-radius: var(--radius-soft); overflow: hidden; box-shadow: var(--shadow-clean); } .gallery-box img { width: 100%; height: 350px; object-fit: cover; display: block; } .gallery-box .info-label { padding: 1.2rem; text-align: center; font-weight: 700; color: var(--text-dark); font-size: 1rem; border-top: 1px solid #f4eae4; } /* 4. SECCIÓN BENEFICIOS LLAMATIVA Y RESUMIDA (image_f3273c.png) */ .grid-benefits { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; } .card-benefit { padding: 2rem; background: #ffffff; border: 2px solid #f4eae4; border-radius: var(--radius-soft); text-align: center; transition: all 0.3s ease; } .card-benefit:hover { border-color: var(--accent-cozy); background: #faf5f2; } .card-benefit .benefit-badge { font-size: 2rem; margin-bottom: 0.5rem; display: block; } .card-benefit h4 { color: #b87b66; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.4rem; } .card-benefit p { font-size: 0.98rem; color: var(--text-dark); font-weight: 600; } /* 5. CAJA DE PRECIO ACTUALIZADA A 30 DÓLARES */ .checkout-panel { background: var(--bg-soft); border-radius: 30px; padding: 4rem 2rem; text-align: center; max-width: 750px; margin: 5rem auto 0 auto; box-shadow: var(--shadow-clean); border: 2px solid rgba(220, 167, 148, 0.2); } .price-old { text-decoration: line-through; color: #b3a7a2; font-size: 1.3rem; font-weight: 600; } .price-new { font-size: 5rem; font-weight: 900; color: var(--text-dark); margin: 0.5rem 0 2rem 0; line-height: 1; } </style> </head> <body> <div class="announcement-bar"> ¡Aprovecha el descuento especial de lanzamiento disponible hoy! </div> <!-- 1. SECCIÓN HERO (Fondo de concreto optimizado) --> <section class="hero-section"> <div class="hero-pill">Programa Online • Aprende desde casa a tu propio ritmo</div> <h1>En 14 días lograrás crear <span>piezas únicas en concreto</span> y descubrir cómo transformarlas en tu propio negocio</h1> <p>Aprende detalladamente las mejores técnicas artesanales y aprovecha las tendencias decorativas actuales sin necesidad de conocimientos previos.</p> <div> <a href="https://pay.hotmart.com/E100486464F?off=jbpevbxo&checkoutMode=10&bid=1781489881868" class="btn-cozy" target="_blank" rel="noopener"> Quiero unirme al programa hoy </a> </div> </section> <div class="main-container"> <!-- 2. DIAGRAMA LLAMATIVO Y RESUMIDO (Antes image_f32a7b.png) --> <h2 class="block-title">¿Qué vas a <span>aprender</span>?</h2> <div class="grid-learning"> <div class="card-learning"> <div class="icon-pill">🏺</div> <h3>Creación de Piezas Únicas</h3> <ul> <li>Bandejas, jarrones y portavelas.</li> <li>Macetas, joyeros e incensarios.</li> <li>Acabados profesionales de alta calidad.</li> </ul> </div> <div class="card-learning"> <div class="icon-pill">🛠️</div> <h3>Técnicas de Acabado Pulido</h3> <ul> <li>Procesos limpios de vaciado.</li> <li>Nivelación fina y uniforme.</li> <li>Superficies suaves listas para comercializar.</li> </ul> </div> <div class="card-learning"> <div class="icon-pill">🎨</div> <h3>Personalización y Color</h3> <ul> <li>Intervención estética moderna.</li> <li>Aplicación limpia de pinturas.</li> <li>Diseños adaptados a tus clientes.</li> </ul> </div> <div class="card-learning"> <div class="icon-pill">🌈</div> <h3>Efectos y Texturas Modernas</h3> <ul> <li>Efecto <strong>microterrazo y granito</strong>.</li> <li>Técnicas creativas de <strong>swirling</strong>.</li> <li>Coloración desde la masa inicial.</li> </ul> </div> <div class="card-learning"> <div class="icon-pill">📊</div> <h3>Gestión Financiera de Costos</h3> <ul> <li>Cálculo sencillo de insumos básicos.</li> <li>Estrategias de precios de venta fijas.</li> <li>Garantía de márgenes saludables.</li> </ul> </div> <div class="card-learning"> <div class="icon-pill">📲</div> <h3>Estrategia en Canales Digitales</h3> <ul> <li>Portafolio amigable y estético.</li> <li>Presencia orgánica en redes sociales.</li> <li>Conexión directa con compradores.</li> </ul> </div> </div> </div> <!-- 3. SECCIÓN DE IMÁGENES DE DISEÑOS (Inspiradas en Pinterest) --> <div class="gallery-wrapper"> <div class="main-container" style="padding: 0 1.5rem;"> <h2 class="block-title">Algunos de los diseños que <span>lograrás realizar:</span></h2> <div class="gallery-grid"> <div class="gallery-box"> <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=500&q=80" alt="Macetas de Concreto"> <div class="info-label">Macetas y Portavelas Minimalistas</div> </div> <div class="gallery-box"> <img src="https://images.unsplash.com/photo-1606744824163-985d376605aa?auto=format&fit=crop&w=500&q=80" alt="Bandejas de Cemento"> <div class="info-label">Bandejas Organizadoras de Tendencia</div> </div> <div class="gallery-box"> <img src="https://images.unsplash.com/photo-1578500494198-246f612d3b3d?auto=format&fit=crop&w=500&q=80" alt="Texturas de Concreto"> <div class="info-label">Efectos de Coloración y Texturas Finas</div> </div> </div> </div> </div> <div class="main-container" style="padding-top: 0;"> <!-- 4. BENEFICIOS DIAGRAMADOS Y COMPACTOS (Antes image_f3273c.png) --> <h2 class="block-title">Beneficios de estudiar con <span>nosotros:</span></h2> <div class="grid-benefits"> <div class="card-benefit"> <span class="benefit-badge">♾️</span> <h4>Acceso Permanente</h4> <p>Clases sin límites disponibles de por vida.</p> </div> <div class="card-benefit"> <span class="benefit-badge">🏡</span> <h4>Flexibilidad de Horarios</h4> <p>Estudia cómodamente desde tu hogar.</p> </div> <div class="card-benefit"> <span class="benefit-badge">🤝</span> <h4>Acompañamiento</h4> <p>Soporte para resolver dudas técnicas.</p> </div> <div class="card-benefit"> <span class="benefit-badge">💰</span> <h4>Inversión Eficiente</h4> <p>A una fracción del costo presencial.</p> </div> <div class="card-benefit"> <span class="benefit-badge">📈</span> <h4>Retorno a Corto Plazo</h4> <p>Recupera lo invertido con tus primeras ventas.</p> </div> <div class="card-benefit"> <span class="benefit-badge">🎓</span> <h4>Certificado Incluido</h4> <p>Descarga tu constancia digital al finalizar.</p> </div> </div> <!-- 5. PANEL DE PRECIO CORREGIDO ($30 USD) --> <div class="checkout-panel"> <h3 style="font-size: 1.5rem; font-weight: 800; text-transform: uppercase;">Asegura tu acceso al programa</h3> <p style="color: var(--text-muted); margin: 0.5rem 0 1.5rem 0;">Aprovecha la tarifa promocional de un único pago con actualizaciones incluidas.</p> <div class="price-old">Antes: $37 USD</div> <div class="price-new">$30 USD</div> <div> <a href="https://pay.hotmart.com/E100486464F?off=jbpevbxo&checkoutMode=10&bid=1781489881868" class="btn-cozy" target="_blank" rel="noopener" style="display: block; max-width: 450px; margin: 0 auto;"> Inscribirme al programa ahora </a> </div> <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 1.5rem; font-weight: 600;">🔒 Transacción 100% segura. Acceso inmediato por correo electrónico.</p> </div> </div> </body> </html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piezas de Concreto - Programa Online</title>
+    <style>
+        :root {
+            --bg-light: #ffffff;
+            --bg-soft: #fbf7f4;       
+            --text-dark: #2d2d2d;      
+            --text-muted: #5a5a5a;
+            --accent-cozy: #dca794;    
+            --accent-hover: #cb937f;
+            --shadow-clean: 0 10px 30px rgba(220, 167, 148, 0.08);
+            --radius-soft: 20px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* CINTILLA SUPERIOR */
+        .announcement-bar {
+            background: #f4eae4;
+            color: #8f6a5e;
+            text-align: center;
+            padding: 0.7rem;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* 1. HERO - FONDO CON PIEZAS DE CONCRETO (image_f39ab9.png) */
+        .hero-section {
+            position: relative;
+            padding: 8rem 1.5rem;
+            text-align: center;
+            /* Imagen de fondo inspirada en la estética rústica y limpia de Pinterest */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+        }
+
+        .hero-pill {
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 0.6rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            line-height: 1.25;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-section h1 span { 
+            color: #ffccbc;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 3rem auto;
+            color: #f5f5f5;
+        }
+
+        /* BOTÓN PRINCIPAL LLAMATIVO */
+        .btn-cozy {
+            display: inline-block;
+            background-color: var(--accent-cozy);
+            color: white;
+            padding: 1.2rem 4rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.25rem;
+            box-shadow: 0 10px 25px rgba(220, 167, 148, 0.4);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .btn-cozy:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        /* ESTRUCTURA DE CONTENIDOS */
+        .main-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 5rem 1.5rem;
+        }
+
+        .block-title {
+            text-align: center;
+            font-size: 2.3rem;
+            margin-bottom: 3.5rem;
+            font-weight: 800;
+        }
+
+        .block-title span {
+            color: var(--accent-cozy);
+        }
+
+        /* 2. DIAGRAMA DE APRENDIZAJE RESUMIDO (image_f32a7b.png) */
+        .grid-learning {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card-learning {
+            background: var(--bg-soft);
+            padding: 2rem;
+            border-radius: var(--radius-soft);
+            box-shadow: var(--shadow-clean);
+            border: 1px solid rgba(220, 167, 148, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .card-learning:hover {
+            transform: translateY(-5px);
+            background: #ffffff;
+        }
+
+        .card-learning .icon-pill {
+            background: #ffffff;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+
+        .card-learning h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .card-learning ul {
+            list-style: none;
+        }
+
+        .card-learning ul li {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-learning ul li::before {
+            content: "✓";
+            color: #b87b66;
+            font-weight: bold;
+        }
+
+        /* 3. GALERÍA RECIÉN AGREGADA (INSPIRADA EN PINTEREST) */
+        .gallery-wrapper {
+            background-color: var(--bg-soft);
+            padding: 5rem 1.5rem;
+            border-radius: 30px;
+            margin: 4rem 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-box {
+            background: #ffffff;
+            border-radius: var(--radius-soft);
+            overflow: hidden;
+            box-shadow: var(--shadow-clean);
+        }
+
+        .gallery-box img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-box .info-label {
+            padding: 1.2rem;
+            text-align: center;
+            font-weight: 700;
+            color: var(--text-dark);
+            font-size: 1rem;
+            border-top: 1px solid #f4eae4;
+        }
+
+        /* 4. SECCIÓN BENEFICIOS LLAMATIVA Y RESUMIDA (image_f3273c.png) */
+        .grid-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card-benefit {
+            padding: 2rem;
+            background: #ffffff;
+            border: 2px solid #f4eae4;
+            border-radius: var(--radius-soft);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .card-benefit:hover {
+            border-color: var(--accent-cozy);
+            background: #faf5f2;
+        }
+
+        .card-benefit .benefit-badge {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .card-benefit h4 {
+            color: #b87b66;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+        }
+
+        .card-benefit p {
+            font-size: 0.98rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        /* 5. CAJA DE PRECIO ACTUALIZADA A 30 DÓLARES */
+        .checkout-panel {
+            background: var(--bg-soft);
+            border-radius: 30px;
+            padding: 4rem 2rem;
+            text-align: center;
+            max-width: 750px;
+            margin: 5rem auto 0 auto;
+            box-shadow: var(--shadow-clean);
+            border: 2px solid rgba(220, 167, 148, 0.2);
+        }
+
+        .price-old {
+            text-decoration: line-through;
+            color: #b3a7a2;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .price-new {
+            font-size: 5rem;
+            font-weight: 900;
+            color: var(--text-dark);
+            margin: 0.5rem 0 2rem 0;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="announcement-bar">
+        ¡Aprovecha el descuento especial de lanzamiento disponible hoy!
+    </div>
+
+    <!-- 1. SECCIÓN HERO (Fondo de concreto optimizado) -->
+    <section class="hero-section">
+        <div class="hero-pill">Programa Online • Aprende desde casa a tu propio ritmo</div>
+        <h1>En 14 días lograrás crear <span>piezas únicas en concreto</span> y descubrir cómo transformarlas en tu propio negocio</h1>
+        <p>Aprende detalladamente las mejores técnicas artesanales y aprovecha las tendencias decorativas actuales sin necesidad de conocimientos previos.</p>
+        <div>
+            <a href="https://pay.hotmart.com/E100486464F?off=jbpevbxo&checkoutMode=10&bid=1781489881868" class="btn-cozy" target="_blank" rel="noopener">
+                Quiero unirme al programa hoy
+            </a>
+        </div>
+    </section>
+
+    <div class="main-container">
+
+        <!-- 2. DIAGRAMA LLAMATIVO Y RESUMIDO (Antes image_f32a7b.png) -->
+        <h2 class="block-title">¿Qué vas a <span>aprender</span>?</h2>
+        <div class="grid-learning">
+            <div class="card-learning">
+                <div class="icon-pill">🏺</div>
+                <h3>Creación de Piezas Únicas</h3>
+                <ul>
+                    <li>Bandejas, jarrones y portavelas.</li>
+                    <li>Macetas, joyeros e incensarios.</li>
+                    <li>Acabados profesionales de alta calidad.</li>
+                </ul>
+            </div>
+            <div class="card-learning">
+                <div class="icon-pill">🛠️</div>
+                <h3>Técnicas de Acabado Pulido</h3>
+                <ul>
+                    <li>Procesos limpios de vaciado.</li>
+                    <li>Nivelación fina y uniforme.</li>
+                    <li>Superficies suaves listas para comercializar.</li>
+                </ul>
+            </div>
+            <div class="card-learning">
+                <div class="icon-pill">🎨</div>
+                <h3>Personalización y Color</h3>
+                <ul>
+                    <li>Intervención estética moderna.</li>
+                    <li>Aplicación limpia de pinturas.</li>
+                    <li>Diseños adaptados a tus clientes.</li>
+                </ul>
+            </div>
+            <div class="card-learning">
+                <div class="icon-pill">🌈</div>
+                <h3>Efectos y Texturas Modernas</h3>
+                <ul>
+                    <li>Efecto <strong>microterrazo y granito</strong>.</li>
+                    <li>Técnicas creativas de <strong>swirling</strong>.</li>
+                    <li>Coloración desde la masa inicial.</li>
+                </ul>
+            </div>
+            <div class="card-learning">
+                <div class="icon-pill">📊</div>
+                <h3>Gestión Financiera de Costos</h3>
+                <ul>
+                    <li>Cálculo sencillo de insumos básicos.</li>
+                    <li>Estrategias de precios de venta fijas.</li>
+                    <li>Garantía de márgenes saludables.</li>
+                </ul>
+            </div>
+            <div class="card-learning">
+                <div class="icon-pill">📲</div>
+                <h3>Estrategia en Canales Digitales</h3>
+                <ul>
+                    <li>Portafolio amigable y estético.</li>
+                    <li>Presencia orgánica en redes sociales.</li>
+                    <li>Conexión directa con compradores.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 3. SECCIÓN DE IMÁGENES DE DISEÑOS (Inspiradas en Pinterest) -->
+    <div class="gallery-wrapper">
+        <div class="main-container" style="padding: 0 1.5rem;">
+            <h2 class="block-title">Algunos de los diseños que <span>lograrás realizar:</span></h2>
+            <div class="gallery-grid">
+                <div class="gallery-box">
+                    <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=500&q=80" alt="Macetas de Concreto">
+                    <div class="info-label">Macetas y Portavelas Minimalistas</div>
+                </div>
+                <div class="gallery-box">
+                    <img src="https://images.unsplash.com/photo-1606744824163-985d376605aa?auto=format&fit=crop&w=500&q=80" alt="Bandejas de Cemento">
+                    <div class="info-label">Bandejas Organizadoras de Tendencia</div>
+                </div>
+                <div class="gallery-box">
+                    <img src="https://images.unsplash.com/photo-1578500494198-246f612d3b3d?auto=format&fit=crop&w=500&q=80" alt="Texturas de Concreto">
+                    <div class="info-label">Efectos de Coloración y Texturas Finas</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container" style="padding-top: 0;">
+
+        <!-- 4. BENEFICIOS DIAGRAMADOS Y COMPACTOS (Antes image_f3273c.png) -->
+        <h2 class="block-title">Beneficios de estudiar con <span>nosotros:</span></h2>
+        <div class="grid-benefits">
+            <div class="card-benefit">
+                <span class="benefit-badge">♾️</span>
+                <h4>Acceso Permanente</h4>
+                <p>Clases sin límites disponibles de por vida.</p>
+            </div>
+            <div class="card-benefit">
+                <span class="benefit-badge">🏡</span>
+                <h4>Flexibilidad de Horarios</h4>
+                <p>Estudia cómodamente desde tu hogar.</p>
+            </div>
+            <div class="card-benefit">
+                <span class="benefit-badge">🤝</span>
+                <h4>Acompañamiento</h4>
+                <p>Soporte para resolver dudas técnicas.</p>
+            </div>
+            <div class="card-benefit">
+                <span class="benefit-badge">💰</span>
+                <h4>Inversión Eficiente</h4>
+                <p>A una fracción del costo presencial.</p>
+            </div>
+            <div class="card-benefit">
+                <span class="benefit-badge">📈</span>
+                <h4>Retorno a Corto Plazo</h4>
+                <p>Recupera lo invertido con tus primeras ventas.</p>
+            </div>
+            <div class="card-benefit">
+                <span class="benefit-badge">🎓</span>
+                <h4>Certificado Incluido</h4>
+                <p>Descarga tu constancia digital al finalizar.</p>
+            </div>
+        </div>
+
+        <!-- 5. PANEL DE PRECIO CORREGIDO ($30 USD) -->
+        <div class="checkout-panel">
+            <h3 style="font-size: 1.5rem; font-weight: 800; text-transform: uppercase;">Asegura tu acceso al programa</h3>
+            <p style="color: var(--text-muted); margin: 0.5rem 0 1.5rem 0;">Aprovecha la tarifa promocional de un único pago con actualizaciones incluidas.</p>
+            
+            <div class="price-old">Antes: $37 USD</div>
+            <div class="price-new">$30 USD</div>
+            
+            <div>
+                <a href="https://pay.hotmart.com/E100486464F?off=jbpevbxo&checkoutMode=10&bid=1781489881868" class="btn-cozy" target="_blank" rel="noopener" style="display: block; max-width: 450px; margin: 0 auto;">
+                    Inscribirme al programa ahora
+                </a>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 1.5rem; font-weight: 600;">🔒 Transacción 100% segura. Acceso inmediato por correo electrónico.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
