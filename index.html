@@ -96,4 +96,113 @@
       background-color: rgba(255,255,255,0.15);
       backdrop-filter: blur(8px);
       border-radius: 50px;
-      padding
+      padding: 0.6rem 2rem;
+      font-weight: 600;
+      font-size: 0.85rem;
+      display: inline-block;
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+    }
+
+    .hero-section h1 {
+      font-size: 3rem;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      font-weight: 800;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .hero-section h1 span {
+      color: #ffccbc;
+    }
+
+    .hero-section p {
+      font-size: 1.25rem;
+      max-width: 750px;
+      margin: 0 auto 3.5rem auto;
+      color: #f5f5f5;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+
+    .btn-cozy {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--accent-main), #d49580);
+      color: white;
+      padding: 1.2rem 4rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.2rem;
+      box-shadow: 0 12px 30px rgba(220,167,148,0.45);
+      transition: all 0.4s ease;
+      text-transform: uppercase;
+    }
+
+    .btn-cozy:hover {
+      background: linear-gradient(135deg, var(--accent-hover), #be816c);
+      transform: translateY(-4px);
+    }
+
+    .main-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 6rem 1.5rem;
+    }
+
+    .block-title {
+      text-align: center;
+      font-size: 2.6rem;
+      margin-bottom: 4rem;
+      font-weight: 800;
+    }
+
+    .block-title span {
+      color: var(--accent-main);
+      background: rgba(220,167,148,0.1);
+      padding: 0.2rem 0.8rem;
+      border-radius: 12px;
+    }
+
+    .grid-learning {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .card-learning {
+      background: var(--bg-soft);
+      padding: 2.5rem 2rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(220,167,148,0.12);
+      transition: transform 0.3s ease;
+    }
+
+    .card-learning:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(220,167,148,0.25);
+    }
+
+    .card-learning .icon-pill {
+      background: #ffffff;
+      width: 75px;
+      height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .gallery-wrapper {
+      background: var(--bg-soft);
+      padding: 6rem 1.5rem;
+      border-radius: 40px;
+      margin: 2rem 0;
+    }
+
+    .gallery-grid
