@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Masterclass: Concreto Creativo - Aprende y Emprende</title>
+    <title>Concreto Negocio Creativo - Masterclass Exclusiva</title>
     <style>
-        /* --- VARIABLES DE DISEÑO EMOCIONAL DE VENTAS --- */
         :root {
-            --primary: #111827;     /* Gris casi negro, profesional */
-            --accent: #ff4757;      /* Rojo vibrante para botones de compra (Urgencia) */
-            --yellow: #ffa502;      /* Amarillo para destacar bonos y estrellitas */
-            --bg-light: #f3f4f6;    /* Fondo limpio */
+            --primary: #111827;
+            --accent: #ff4757;
+            --yellow: #ffa502;
+            --green: #2ed573;
+            --bg-light: #f8f9fa;
             --text-dark: #1f2937;
             --text-light: #ffffff;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', system-ui, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             scroll-behavior: smooth;
         }
 
@@ -30,32 +30,35 @@
             line-height: 1.6;
         }
 
-        /* --- BARRA DE URGENCIA SUPERIOR --- */
+        /* --- BARRA ALERTA --- */
         .top-bar {
-            background-color: var(--accent);
+            background: var(--accent);
             color: white;
             text-align: center;
-            padding: 0.5rem;
+            padding: 0.6rem;
             font-weight: bold;
             font-size: 0.9rem;
             letter-spacing: 0.5px;
+            position: sticky;
+            top: 0;
+            z-index: 2000;
         }
 
-        /* --- SECCIÓN HERO (Presentación del Curso) --- */
+        /* --- HERO PRINCIPAL --- */
         .hero {
-            background-image: linear-gradient(rgba(17, 24, 39, 0.85), rgba(17, 24, 39, 0.9)), 
+            background-image: linear-gradient(rgba(17, 24, 39, 0.88), rgba(17, 24, 39, 0.92)), 
                               url('https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
-            padding: 6rem 1.5rem;
+            padding: 5rem 1.5rem;
             text-align: center;
             color: var(--text-light);
         }
 
-        .badge-online {
+        .badge-main {
             background-color: var(--yellow);
             color: #000;
-            padding: 0.4rem 1rem;
+            padding: 0.4rem 1.2rem;
             border-radius: 50px;
             font-weight: bold;
             font-size: 0.85rem;
@@ -65,7 +68,7 @@
         }
 
         .hero h1 {
-            font-size: 2.8rem;
+            font-size: 2.6rem;
             line-height: 1.2;
             margin-bottom: 1.5rem;
             max-width: 900px;
@@ -73,55 +76,60 @@
             margin-right: auto;
         }
 
-        .hero h1 span {
-            color: var(--yellow);
-        }
+        .hero h1 span { color: var(--yellow); }
 
         .hero p {
             font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 2.5rem auto;
+            max-width: 750px;
+            margin: 0 auto 2rem auto;
             color: #d1d5db;
         }
 
-        /* --- BOTÓN DE COMPRA CALIENTE --- */
-        .btn-checkout {
+        /* --- BOTÓN DE COMPRA HOTMART --- */
+        .btn-hotmart {
             display: inline-block;
-            background-color: var(--accent);
-            color: white;
+            background-color: var(--green);
+            color: #111827;
             padding: 1.2rem 2.5rem;
             border-radius: 8px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 800;
             font-size: 1.3rem;
             text-transform: uppercase;
-            box-shadow: 0 10px 25px rgba(255, 71, 87, 0.5);
+            box-shadow: 0 10px 25px rgba(46, 213, 115, 0.4);
             transition: transform 0.2s, background-color 0.2s;
             animation: pulse 2s infinite;
+            border: none;
+            cursor: pointer;
         }
 
-        .btn-checkout:hover {
-            background-color: #ff2a3b;
+        .btn-hotmart:hover {
+            background-color: #26af5f;
             transform: scale(1.03);
+            color: #fff;
         }
 
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(255, 71, 87, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 71, 87, 0); }
+            0% { box-shadow: 0 0 0 0 rgba(46, 213, 115, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(46, 213, 115, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(46, 213, 115, 0); }
         }
 
-        .garantia-text {
-            font-size: 0.85rem;
-            color: #9ca3af;
-            margin-top: 1rem;
-            display: flex;
-            justify-content: center;
+        /* --- REPRODUCTOR SIMULADO --- */
+        .audio-prompt {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            display: inline-flex;
             align-items: center;
-            gap: 5px;
+            gap: 10px;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: #e5e7eb;
         }
 
-        /* --- SECCIÓN CONTENIDO / LO QUE APRENDERÁN --- */
+        /* --- CONTENEDOR GENERAL --- */
         .container {
             max-width: 1100px;
             margin: 0 auto;
@@ -135,187 +143,428 @@
             color: var(--primary);
         }
 
-        .section-title span {
-            color: var(--accent);
+        .section-title span { color: var(--accent); }
+
+        /* --- SECCIÓN SELECCIÓN (ESTE PROGRAMA ES PARA TI SI...) --- */
+        .grid-target {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
         }
 
-        .grid-beneficios {
+        .target-card {
+            background: #ffffff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--accent);
+            font-size: 0.95rem;
+        }
+
+        /* --- ENFOQUE DEL NEGOCIO / AUGE --- */
+        .auge-box {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        /* --- QUE VAS A APRENDER --- */
+        .learning-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .learning-item {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            display: flex;
+            gap: 12px;
+        }
+
+        .learning-item::before {
+            content: "✓";
+            color: var(--green);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* --- BENEFICIOS --- */
+        .benefits-section {
+            background: #f0f2f5;
+            padding: 4rem 1.5rem;
+            border-radius: 16px;
+            margin: 4rem 0;
+        }
+
+        /* --- DISEÑOS MUESTRA (GALERÍA) --- */
+        .design-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .design-gallery img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        /* --- TEMARIO / ACORDEÓN SIMPLIFICADO --- */
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .module-tab {
+            background: #fff;
+            padding: 1rem;
+            border-radius: 6px;
+            border: 1px solid #e5e7eb;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--primary);
+        }
+
+        /* --- CONTADORES DE ESCACEZ --- */
+        .urgency-container {
+            background: #fff3f3;
+            border: 2px dashed var(--accent);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 1.5rem 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .progress-bar-container {
+            background: #e5e7eb;
+            border-radius: 20px;
+            height: 20px;
+            width: 100%;
+            max-width: 500px;
+            margin: 1rem auto;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            background: var(--accent);
+            height: 100%;
+            width: 82%; /* Simula 80% lleno */
+        }
+
+        /* --- SECCIÓN BONOS --- */
+        .bonos-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
 
-        .beneficio-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-            border-left: 5px solid var(--yellow);
-        }
-
-        .beneficio-card h3 {
-            margin-bottom: 0.8rem;
-            color: var(--primary);
-        }
-
-        /* --- SECCIÓN INCENTIVOS (BONOS) --- */
-        .bonos-section {
-            background-color: var(--primary);
-            color: white;
-            padding: 4rem 1.5rem;
-        }
-
-        .grid-bonos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
         .bono-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px dashed var(--yellow);
-            padding: 2rem;
+            background: #fff;
+            border: 2px solid #e5e7eb;
             border-radius: 12px;
+            padding: 2rem;
             position: relative;
+            box-shadow: var(--shadow);
         }
 
-        .bono-badge {
+        .bono-tag {
             position: absolute;
             top: -12px;
-            right: 15px;
+            left: 20px;
             background: var(--yellow);
-            color: black;
-            padding: 0.2rem 0.8rem;
-            font-size: 0.75rem;
+            color: #000;
             font-weight: bold;
+            padding: 0.2rem 1rem;
             border-radius: 4px;
+            font-size: 0.8rem;
         }
 
-        /* --- SECCIÓN OFERTA Y PRECIO --- */
-        .oferta-box {
-            background: white;
-            max-width: 600px;
-            margin: 4rem auto 0 auto;
+        .bono-val {
+            color: var(--accent);
+            font-weight: bold;
+            margin-top: 1rem;
+            display: block;
+        }
+
+        /* --- OFERTA FINAL IRRESISTIBLE --- */
+        .oferta-final {
+            background: #ffffff;
+            border: 3px solid var(--yellow);
+            border-radius: 20px;
             padding: 3rem 2rem;
-            border-radius: 16px;
-            box-shadow: var(--shadow);
             text-align: center;
-            border: 2px solid var(--yellow);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            max-width: 700px;
+            margin: 4rem auto;
         }
 
-        .precio-antes {
+        .precio-antiguo {
             text-decoration: line-through;
             color: #9ca3af;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
         }
 
-        .precio-ahora {
-            font-size: 3.5rem;
+        .precio-nuevo {
+            font-size: 4rem;
             font-weight: 900;
             color: var(--primary);
             margin: 0.5rem 0;
         }
 
-        /* --- RESPONSIVO --- */
+        /* --- BIO PROFESORAS --- */
+        .bio-section {
+            background: #111827;
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 16px;
+            margin-top: 4rem;
+        }
+
+        .bio-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* --- GARANTÍA --- */
+        .garantia-box {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            margin: 4rem 0;
+        }
+
+        /* --- FAQ --- */
+        .faq-item {
+            background: #fff;
+            padding: 1.2rem;
+            border-radius: 6px;
+            margin-bottom: 0.8rem;
+            box-shadow: var(--shadow);
+        }
+
+        .faq-item h4 { color: var(--primary); margin-bottom: 0.5rem; }
+
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .precio-ahora { font-size: 2.5rem; }
-            .btn-checkout { width: 100%; font-size: 1.1rem; padding: 1rem; }
+            .hero h1 { font-size: 1.9rem; }
+            .garantia-box { flex-direction: column; text-align: center; }
+            .precio-nuevo { font-size: 2.8rem; }
+            .btn-hotmart { width: 100%; font-size: 1.1rem; padding: 1.2rem 1rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- AVISO DE URGENCIA -->
     <div class="top-bar">
-        ⚠️ ¡ATENCIÓN! 50% DE DESCUENTO DISPONIBLE HASTA HOY
+        ⚠️ ¡OFERTA POR TIEMPO LIMITADO! 50% DE DESCUENTO DISPONIBLE SÓLO HOY
     </div>
 
-    <!-- HERO PRINCIPAL -->
+    <!-- SECCIÓN HERO (INICIO) -->
     <section class="hero">
-        <div class="badge-online">➔ Formación 100% Online y Práctica</div>
-        <h1>Conviértete en Experto del <span>Concreto Decorativo</span> y Crea un Negocio Rentable desde Casa</h1>
-        <p>Aprende desde cero las técnicas profesionales para fabricar macetas, bandejas y mobiliario de cemento sin necesidad de herramientas costosas ni experiencia previa.</p>
+        <div class="badge-main">Programa 100% en Línea • 20 a 30 min al día</div>
+        <h1>En 14 Días Lograrás Crear <span>Piezas Únicas en Concreto</span> y Empezar tu Propio Negocio Rentable</h1>
+        <p>Aprende detalladamente las mejores técnicas y aprovecha las tendencias del mercado. NO necesitas experiencia previa, nosotros te enseñamos todo desde cero.</p>
         
-        <!-- TU BOTÓN CON LINK DE AFILIADO DE HOTMART -->
-        <a href="https://concreto.academiags.com/?ref=M104346891U" class="btn-checkout" target="_blank" rel="noopener">
-            ¡Inscribirme al Programa Hoy!
+        <a href="https://pay.hotmart.com/E100486464F?off=jbpevbxo&checkoutMode=10" class="btn-hotmart" target="_blank" rel="noopener">
+            QUIERO EMPEZAR MI NEGOCIO HOY
         </a>
+
+        <br>
+        <div class="audio-prompt">
+            🔊 <span>Haz click en el botón para activar el audio del programa</span>
+        </div>
+    </section>
+
+    <div class="container">
         
-        <div class="garantia-text">
-            🛡️ Garantía de satisfacción de 7 días • Pago 100% seguro
+        <!-- PARA QUIÉN ES -->
+        <h2 class="section-title">Este programa es <span>para ti si...</span></h2>
+        <div class="grid-target">
+            <div class="target-card">Buscas aprender técnicas profesionales con acabados perfectos y duraderos.</div>
+            <div class="target-card">Quieres diferenciarte en el mercado ampliando tu catálogo desde bandejas hasta materas.</div>
+            <div class="target-card">Buscas un paso a paso claro para emprender y vender con éxito tus creaciones.</div>
+            <div class="target-card">Deseas descubrir efectos únicos (color, marmoleado) para sorprender a tus clientes.</div>
+            <div class="target-card">Sueñas con iniciar tu propio negocio desde casa ganando dinero real.</div>
+            <div class="target-card">Quieres aprender a seleccionar y combinar materiales de forma profesional.</div>
+            <div class="target-card">Buscas destacar como una de las mejores emprendedoras de decoración en tu país.</div>
         </div>
-    </section>
 
-    <!-- LO QUE LOGRARÁS -->
-    <main class="container">
-        <h2 class="section-title">¿Qué vas a <span>Lograr</span> en este Curso?</h2>
-        <div class="grid-beneficios">
-            
-            <div class="beneficio-card">
-                <h3>Dominio de Mezclas</h3>
-                <p>Aprenderás la dosificación exacta para que tus piezas queden ultra resistentes, pulidas y sin molestas burbujas o fisuras.</p>
-            </div>
-
-            <div class="beneficio-card">
-                <h3>Moldes y Desmolde</h3>
-                <p>Descubrirás cómo usar moldes comerciales y fabricar tus propios moldes caseros con materiales reciclados económicos.</p>
-            </div>
-
-            <div class="beneficio-card">
-                <h3>Técnicas de Acabado</h3>
-                <p>Aprende secretos de pigmentación, efectos tipo mármol (terrazzo), lijado perfecto y sellado para impermeabilizar tus obras.</p>
-            </div>
-
+        <!-- EL AUGE DEL NEGOCIO -->
+        <div class="auge-box">
+            <h2>Un mercado en total crecimiento</h2>
+            <p style="margin-top: 1rem; font-size: 1.1rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                El negocio de la creación de piezas decorativas en concreto está en auge. Ofrece productos duraderos, altamente personalizables y abre las puertas a un emprendimiento sumamente rentable con un bajo costo de inversión inicial.
+            </p>
         </div>
-    </main>
 
-    <!-- SECCIÓN DE BONOS -->
-    <section class="bonos-section">
-        <h2 class="section-title" style="color: white;">Si te inscribes HOY, recibes estos <span>Bonos Gratis</span>:</h2>
-        <div class="grid-bonos">
-            
-            <div class="bono-card">
-                <div class="bono-badge">GRATIS</div>
-                <h3>Bono 1: Guía de Costos y Precios</h3>
-                <p>Aprende a calcular el costo de tus materiales para vender tus piezas con el máximo margen de ganancia.</p>
-            </div>
-
-            <div class="bono-card">
-                <div class="bono-badge">GRATIS</div>
-                <h3>Bono 2: Comunidad Privada</h3>
-                <p>Acceso directo al grupo de alumnos para resolver dudas, compartir tus avances y recibir feedback constante.</p>
-            </div>
-
+        <!-- QUÉ VAS A APRENDER -->
+        <h2 class="section-title">¿Qué vas a <span>Aprender</span>?</h2>
+        <div class="learning-list">
+            <div class="learning-item"><p><strong>Creación variada:</strong> Diseñarás bandejas, jarrones, portavelas, topes de puerta, joyeros, materas y más.</p></div>
+            <div class="learning-item"><p><strong>Técnicas de Acabado:</strong> Secretos para lograr alta calidad y durabilidad extrema en cada pieza.</p></div>
+            <div class="learning-item"><p><strong>Personalización Avanzada:</strong> Uso de pinturas acrílicas adaptadas al gusto de tu comprador.</p></div>
+            <div class="learning-item"><p><strong>Efectos Innovadores:</strong> Dominarás técnicas como microterrazo, swirling, terrazo y texturas.</p></div>
+            <div class="learning-item"><p><strong>Finanzas Eficientes:</strong> Gestión exacta de costos de producción y precios para garantizar ganancias.</p></div>
+            <div class="learning-item"><p><strong>Marketing Digital:</strong> Estrategias efectivas en redes sociales para posicionarte y vender diariamente.</p></div>
         </div>
-    </section>
 
-    <!-- CAJA DE OFERTA FINAL -->
-    <section class="container" style="padding-top: 0;">
-        <div class="oferta-box">
-            <h3 style="text-transform: uppercase; letter-spacing: 1px; color: var(--accent);">Acceso Inmediato y Para Siempre</h3>
-            <p style="margin-top: 1rem;">Curso Concreto Creativo + Todos los Bonos</p>
-            
-            <div class="precio-antes">Antes $49.99 USD</div>
-            <div class="precio-ahora">¡SÓLO $24.99 USD!</div>
-            <p style="font-size: 0.9rem; color: #6b7280; margin-bottom: 2rem;">(O el equivalente en tu moneda local)</p>
+        <!-- BENEFICIOS -->
+        <div class="benefits-section">
+            <h2 class="section-title" style="margin-bottom: 2rem;">6 Grandes <span>Beneficios</span> del Curso</h2>
+            <div class="grid-target">
+                <div class="target-card" style="border-left-color: var(--green);">➔ Acceso de por vida: Estúdialo a tu propio ritmo sin presiones.</div>
+                <div class="target-card" style="border-left-color: var(--green);">➔ 100% Digital: Avanza según tus horarios y disponibilidad.</div>
+                <div class="target-card" style="border-left-color: var(--green);">➔ Acompañamiento VIP: Resolución de dudas directo con las profesoras.</div>
+                <div class="target-card" style="border-left-color: var(--green);">➔ Máximo Ahorro: 10 veces más económico que un curso presencial.</div>
+                <div class="target-card" style="border-left-color: var(--green);">➔ Rápido Retorno: Recupera tu mínima inversión vendiendo tus primeras piezas.</div>
+                <div class="target-card" style="border-left-color: var(--green);">➔ Certificación Oficial: Avalado con tu nombre por las expertas y HOTMART.</div>
+            </div>
+        </div>
 
-            <!-- SEGUNDO BOTÓN DE COMPRA CALIENTE CON TU LINK -->
-            <a href="https://concreto.academiags.com/?ref=M104346891U" class="btn-checkout" target="_blank" rel="noopener" style="display: block;">
-                ¡SÍ, QUIERO APROVECHAR EL 50%!
+        <!-- GALERÍA DE DISEÑOS -->
+        <h3 style="text-align: center; font-size: 1.5rem; margin-bottom: 1rem;">Algunos de los diseños que lograrás hacer:</h3>
+        <div class="design-gallery">
+            <img src="https://manualidadesconestilo.github.io/Piezasdeconcreto/imagenes/imagen1.jpg" alt="Diseño Concreto 1">
+            <img src="https://manualidadesconestilo.github.io/Piezasdeconcreto/imagenes/imagen2.jpg" alt="Diseño Concreto 2">
+            <img src="https://manualidadesconestilo.github.io/Piezasdeconcreto/imagenes/imagen3.jpg" alt="Diseño Concreto 3">
+        </div>
+
+        <!-- DISPARADOR DE URGENCIA -->
+        <div class="urgency-container">
+            <h3>DISPONIBLE SÓLO HASTA HOY</h3>
+            <p>¡Inscríbete con el 50% de descuento y llévate los bonos exclusivos ingresando ahora mismo!</p>
+            <div class="countdown">
+                <div>02 <span style="font-size: 0.8rem; display:block;">Horas</span></div> :
+                <div>41 <span style="font-size: 0.8rem; display:block;">Minutos</span></div> :
+                <div>46 <span style="font-size: 0.8rem; display:block;">Segundos</span></div>
+            </div>
+            <p style="font-weight: bold; margin-bottom: 0.5rem;">Cupos promocionales reservados:</p>
+            <div class="progress-bar-container"><div class="progress-bar"></div></div>
+            <p style="font-size: 0.85rem; color: var(--accent);">⚠️ ¡Últimos cupos con descuento especial!</p>
+        </div>
+
+        <!-- TEMARIO COMPLETO -->
+        <h2 class="section-title">¿Cómo lo vas a lograr? <span>(23 Módulos)</span></h2>
+        <div class="modules-grid">
+            <div class="module-tab">Módulo 1: Bienvenida y Soporte</div>
+            <div class="module-tab">Módulo 2: Materiales y Proveedores</div>
+            <div class="module-tab">Módulo 3: Antes de empezar</div>
+            <div class="module-tab">Módulo 4: Guía de Mezclas y Medidas</div>
+            <div class="module-tab">Módulo 5: Fundición en Cemento Gris</div>
+            <div class="module-tab">Módulo 6: Fundición en Cemento Blanco</div>
+            <div class="module-tab">Módulo 7: Lijado y Acabado Profesional</div>
+            <div class="module-tab">Módulo 8: Sellado e Impermeabilización</div>
+            <div class="module-tab">Módulo 9: Recomendaciones y Tips Clave</div>
+            <div class="module-tab">Módulo 10: Proyectos Creativos Pro</div>
+            <div class="module-tab">Módulo 11: Incensario Marmoleado</div>
+            <div class="module-tab">Módulo 12: Soporte para Espejo</div>
+            <div class="module-tab">Módulo 13: Cofre con Pigmentos en Polvo</div>
+            <div class="module-tab">Módulo 14: Matera Microterrazo</div>
+            <div class="module-tab">Módulo 15: Bandeja con Terrazo</div>
+            <div class="module-tab">Módulo 16: Portavasos en Granito Pulido</div>
+            <div class="module-tab">Módulo 17: Bandeja con Laminilla Dorada</div>
+            <div class="module-tab">Módulo 18: Cofre con Swirling / Hidropintura</div>
+            <div class="module-tab">Módulo 19: Tope Puerta con Moldes Caseros</div>
+            <div class="module-tab">Módulo 20: Personalización con Acrílicos</div>
+            <div class="module-tab">Módulo 21: Creación de Marca Propia</div>
+            <div class="module-tab">Módulo 22: Posicionamiento Digital</div>
+            <div class="module-tab">Módulo 23: Certificación Final</div>
+        </div>
+
+        <!-- SECCIÓN DE LOS 7 BONOS -->
+        <h2 class="section-title" style="margin-top: 5rem;">Regalos Exclusivos Incluidos <span>(7 Bonos Gratis)</span></h2>
+        <div class="bonos-grid">
+            <div class="bono-card"><div class="bono-tag">BONO #1</div><h4>Pigmentos en Polvo y Líquidos</h4><p>Domina proporciones exactas y mezclas duraderas para dar color.</p><span class="bono-val">Valorado en: $37 USD</span></div>
+            <div class="bono-card"><div class="bono-tag">BONO #2</div><h4>Técnica Swirling</h4><p>Crea espectaculares efectos marmoleados y tipo oleaje únicos.</p><span class="bono-val">Valorado en: $29 USD</span></div>
+            <div class="bono-card"><div class="bono-tag">BONO #3</div><h4>Personalización con Acrílicos</h4><p>Agrega nombres, frases e ilustraciones para enamorar al cliente.</p><span class="bono-val">Valorado en: $15 USD</span></div>
+            <div class="bono-card"><div class="bono-tag">BONO #4</div><h4>Emprendimiento y Marketing</h4><p>Transforma tu arte en un negocio rentable y vende por redes.</p><span class="bono-val">Valorado en: $49 USD</span></div>
+            <div class="bono-card"><div class="bono-tag">BONO #5</div><h4>Efecto Chips en Terrazo</h4><p>Aprende la técnica moderna texturizada más cotizada del mercado.</p><span class="bono-val">Valorado en: $49 USD</span></div>
+            <div class="bono-card"><div class="bono-tag">BONO #6</div><h4>Listado Internacional de Proveedores</h4><p>Ahorra tiempo y dinero con los mejores proveedores por país.</p><span class="bono-val">Valorado en: $49 USD</span></div>
+            <div class="bono-card" style="grid-column: 1 / -1; border-color: var(--yellow);"><div class="bono-tag" style="background:var(--accent); color:white;">BONO #7 RECOMENDADO</div><h4>Acompañamiento de las Profesoras</h4><p>Comunidad privada VIP en Telegram para resolver dudas, corregir procesos y avanzar de la mano con las expertas.</p><span class="bono-val">Valorado en: $49 USD</span></div>
+        </div>
+
+        <!-- OFERTA IRRESISTIBLE FINAL -->
+        <div class="oferta-final">
+            <p class="badge-main" style="background: var(--accent); color: white;">¡SÓLO POR HOY TODO EL CONTENIDO + 7 BONOS!</p>
+            <h3 style="margin: 1rem 0;">CONCRETO NEGOCIO CREATIVO</h3>
+            <p>Acceso ilimitado, clases 100% prácticas y más de 90 videos instructivos de por vida.</p>
+            <div style="margin: 1.5rem 0;">
+                <span class="precio-antiguo">Antes $150 USD</span>
+                <div class="precio-nuevo">$37 USD</div>
+                <p style="font-size: 0.85rem; color: #6b7280;">(O el equivalente en tu moneda local)</p>
+            </div>
+            <a href="https://pay.hotmart.com/E100486464F?off=jbpevbxo&checkoutMode=10" class="btn-hotmart" target="_blank" rel="noopener" style="display: block;">
+                ACCEDER A LA OFERTA AHORA
             </a>
-            
-            <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" style="height: 25px; margin-top: 1.5rem; opacity: 0.7;">
-            <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" style="height: 25px; opacity: 0.7; margin-left: 10px;">
+            <p style="margin-top: 1rem; font-size: 0.85rem; color: #6b7280;">🔒 Pago 100% seguro procesado por Hotmart</p>
         </div>
-    </section>
 
-    <!-- FOOTER REQUERIDO POR HOTMART Y FACEBOOK ADS -->
-    <footer style="background-color: var(--primary); color: #9ca3af; text-align: center; padding: 2rem; font-size: 0.8rem; border-top: 1px solid #374151;">
-        <p>Este sitio no forma parte del sitio web de Facebook o Facebook Inc. Además, este sitio NO está respaldado por Facebook de ninguna manera.</p>
-        <p style="margin-top: 1rem;">&copy; 2026 Manualidades con Estilo. Todos los derechos reservados. Tu enlace de afiliado: U104346891U</p>
+        <!-- GARANTIA -->
+        <div class="garantia-box">
+            <img src="https://img.icons8.com/color/96/000000/shield.png" alt="Garantía" style="width: 80px;">
+            <div>
+                <h3>Tu Inversión está 100% libre de riesgo (Garantía de 7 días)</h3>
+                <p style="margin-top: 0.5rem; font-size: 0.95rem; color: #4b5563;">Si no estás totalmente satisfecha con nuestro curso de Concreto Negocio Creativo, te reembolsamos la totalidad de tu dinero sin preguntas ni explicaciones. ¡Prueba el programa con absoluta tranquilidad!</p>
+            </div>
+        </div>
+
+        <!-- MENTORAS -->
+        <div class="bio-section">
+            <div class="bio-content">
+                <h2 style="color: var(--yellow); margin-bottom: 1.5rem;">¿Quiénes serán tus profesoras?</h2>
+                <p><strong>Carolina Rivas Urueña y Juliana Naranjo Pérez</strong> — Arquitectas cofundadoras de <em>Concretur</em> (firma de diseño interior y mobiliario en concreto) con más de 7 años de experiencia transformando espacios.</p>
+                <p style="margin-top: 1rem; font-size: 0.95rem; color: #d1d5db;">Carolina aporta un enfoque minimalista y elegante, mientras que Juliana destaca por la audaz combinación de texturas y colores. Ambas se unieron para transmitirte todo el conocimiento necesario para emprender con éxito.</p>
+            </div>
+        </div>
+
+        <!-- PREGUNTAS FRECUENTES -->
+        <h2 class="section-title" style="margin-top: 5rem;">Preguntas <span>Frecuentes</span></h2>
+        <div class="faq-item">
+            <h4>Quiero inscribirme ¿Cómo funciona?</h4>
+            <p>Das clic en el botón de la oferta, completas tu pago y el sistema de Hotmart te enviará un correo instantáneo con tus credenciales de acceso para empezar a capacitarte hoy mismo.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Estoy desde cero, no tengo conocimientos, ¿Funciona para mí?</h4>
+            <p>Sí, el programa está diseñado especialmente desde cero. Te llevamos paso a paso por las mezclas básicas hasta las técnicas más avanzadas sin requerir experiencia previa.</p>
+        </div>
+        <div class="faq-item">
+            <h4>¿Es un único pago o hay que pagar algo más?</h4>
+            <p>Es un único pago para toda la vida. Tendrás acceso inmediato al contenido actual y a todas las actualizaciones futuras de forma gratuita.</p>
+        </div>
+        <div class="faq-item">
+            <h4>¿Los pagos son seguros?</h4>
+            <p>Absolutamente. Todos los pagos se procesan de manera segura bajo la plataforma cifrada de Hotmart, líder mundial en productos digitales.</p>
+        </div>
+
+    </div>
+
+    <!-- REQUERIMIENTOS FACEBOOK/GOOGLE -->
+    <footer style="background: var(--primary); color: #6b7280; padding: 2rem 1.5rem; text-align: center; font-size: 0.75rem; line-height: 1.4; border-top: 1px solid #374151;">
+        <p>DESCARGOS DE RESPONSABILIDAD IMPORTANTES: Este sitio no es parte del sitio web de Facebook o Facebook, Inc. o Google. Además, este sitio no está respaldado por Facebook o Google de ninguna manera. FACEBOOK es una marca registrada de FACEBOOK, Inc. / GOOGLE es una marca de Google LLC. Todos los derechos reservados.</p>
+        <p style="margin-top: 1rem; color: #9ca3af;">&copy; 2026 Manualidades con Estilo. Todos los derechos reservados.</p>
     </footer>
 
 </body>
