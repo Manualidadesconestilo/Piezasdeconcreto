@@ -6,14 +6,14 @@
     <title>Concreto Negocio Creativo - Masterclass Completa</title>
     <style>
         :root {
-            --bg-canvas: #faf8f5;   /* Fondo arena/lino muy suave y amigable */
-            --text-main: #3d3a35;   /* Gris cálido oscuro para lectura amena */
-            --accent-warm: #d4a373; /* Dorado terracota para destacar elementos */
-            --brand-green: #606c38; /* Verde oliva/botánico premium para botones y éxito */
-            --brand-green-hover: #4f582f;
-            --card-bg: #ffffff;
-            --shadow-soft: 0 10px 30px rgba(163, 149, 131, 0.08);
-            --radius: 16px;
+            --bg-light: #ffffff;
+            --bg-soft: #fbf7f4;       /* Rosa arena/nude muy sutil y amigable */
+            --text-dark: #333333;      /* Gris orgánico suave para lectura fácil */
+            --text-muted: #666666;
+            --accent-cozy: #dca794;    /* Terracota/Rosa viejo estético para resaltar */
+            --accent-hover: #cb937f;
+            --shadow-clean: 0 8px 24px rgba(220, 167, 148, 0.06);
+            --radius-soft: 20px;
         }
 
         * {
@@ -25,823 +25,824 @@
         }
 
         body {
-            background-color: var(--bg-canvas);
-            color: var(--text-main);
+            background-color: var(--bg-light);
+            color: var(--text-dark);
             line-height: 1.8;
             font-size: 1.05rem;
         }
 
-        /* --- BARRA DE URGENCIA --- */
-        .top-banner {
-            background: #f1eae1;
-            color: #7a6f5d;
+        /* --- CINTILLA SUPERIOR DE AVISO --- */
+        .announcement-bar {
+            background: #f4eae4;
+            color: #8f6a5e;
             text-align: center;
-            padding: 0.8rem;
+            padding: 0.7rem;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             letter-spacing: 1px;
             text-transform: uppercase;
-            border-bottom: 1px solid #e6ded4;
         }
 
-        /* --- HERO SECCIÓN AMIGABLE --- */
-        .hero {
-            padding: 5rem 1.5rem 4rem 1.5rem;
+        /* --- SECCIÓN HERO --- */
+        .hero-section {
+            padding: 6rem 1.5rem 5rem 1.5rem;
             text-align: center;
-            max-width: 1000px;
-            margin: 0 auto;
+            background: linear-gradient(180deg, var(--bg-soft) 0%, var(--bg-light) 100%);
         }
 
-        .hero-badge {
-            background-color: #f1eae1;
-            color: #6b5e4c;
-            padding: 0.6rem 1.8rem;
+        .hero-pill {
+            background-color: #ffffff;
+            color: var(--accent-cozy);
+            border: 1px solid #f4eae4;
+            padding: 0.5rem 1.5rem;
             border-radius: 50px;
             font-weight: 600;
             font-size: 0.85rem;
             display: inline-block;
             margin-bottom: 2rem;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
         }
 
-        .hero h1 {
-            font-size: 2.8rem;
+        .hero-section h1 {
+            font-size: 3rem;
             line-height: 1.3;
             margin-bottom: 1.5rem;
-            color: #2b2925;
+            color: var(--text-dark);
             font-weight: 700;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .hero h1 span { 
-            color: var(--accent-warm); 
-            background: linear-gradient(180deg,transparent 70%, #f5ebe0 70%);
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            max-width: 750px;
-            margin: 0 auto 3rem auto;
-            color: #5c574f;
-        }
-
-        /* --- BOTÓN PREMIUM VERDE OLIVA (HOTMART) --- */
-        .cta-container {
-            margin: 2rem 0;
-        }
-
-        .btn-organic {
+        .hero-section h1 span { 
+            color: #b87b66;
             display: inline-block;
-            background-color: var(--brand-green);
+        }
+
+        .hero-section p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 3.5rem auto;
+            color: var(--text-muted);
+        }
+
+        /* --- BOTÓN DE COMPRA AMIGABLE --- */
+        .btn-cozy {
+            display: inline-block;
+            background-color: var(--accent-cozy);
             color: white;
-            padding: 1.2rem 3.5rem;
+            padding: 1.2rem 4rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
             font-size: 1.25rem;
-            letter-spacing: 0.5px;
-            box-shadow: 0 10px 25px rgba(96, 108, 56, 0.25);
-            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 25px rgba(220, 167, 148, 0.3);
+            transition: all 0.3s ease;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .btn-organic:hover {
-            background-color: var(--brand-green-hover);
+        .btn-cozy:hover {
+            background-color: var(--accent-hover);
             transform: translateY(-2px);
-            box-shadow: 0 12px 30px rgba(96, 108, 56, 0.4);
+            box-shadow: 0 12px 30px rgba(220, 167, 148, 0.45);
         }
 
-        /* --- CONTENEDORES --- */
-        .wrapper {
-            max-width: 1140px;
+        /* --- ESTRUCTURA GENERAL DE BLOQUES --- */
+        .main-container {
+            max-width: 1100px;
             margin: 0 auto;
             padding: 4rem 1.5rem;
         }
 
-        .section-heading {
+        .block-title {
             text-align: center;
             font-size: 2.2rem;
-            margin-bottom: 3.5rem;
-            color: #2b2925;
+            margin-bottom: 4rem;
+            color: var(--text-dark);
             font-weight: 700;
         }
 
-        .section-heading span {
-            color: var(--accent-warm);
+        .block-title span {
+            color: var(--accent-cozy);
         }
 
-        /* --- SECCIÓN EN AUGE CON DISEÑO DE DOS COLUMNAS CON IMAGEN --- */
-        .intro-block {
-            background: var(--card-bg);
-            border-radius: var(--radius);
-            padding: 3rem;
-            box-shadow: var(--shadow-soft);
+        /* --- INTRODUCCIÓN VISUAL --- */
+        .intro-visual-row {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 4rem;
             align-items: center;
-            margin-bottom: 5rem;
+            margin-bottom: 6rem;
         }
 
         @media (max-width: 768px) {
-            .intro-block { grid-template-columns: 1fr; padding: 2rem 1.5rem; gap: 2rem; }
+            .intro-visual-row { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
         }
 
-        .intro-img {
-            width: 100%;
-            height: 380px;
-            object-fit: cover;
-            border-radius: 12px;
-        }
-
-        .intro-text h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: #2b2925;
+        .intro-visual-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
             line-height: 1.3;
         }
 
-        /* --- QUÉ VAS A APRENDER (GRID ESTÉTICO) --- */
-        .features-grid {
+        .rounded-image {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            border-radius: var(--radius-soft);
+            box-shadow: var(--shadow-clean);
+        }
+
+        /* --- QUÉ VAS A APRENDER --- */
+        .grid-learning {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-bottom: 5rem;
+            gap: 2.5rem;
+            margin-bottom: 6rem;
         }
 
-        .feature-box {
-            background: var(--card-bg);
-            padding: 2.5rem 2rem;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-soft);
-            border-bottom: 4px solid transparent;
-            transition: border-color 0.3s ease;
+        .card-learning {
+            background: var(--bg-soft);
+            padding: 2.5rem;
+            border-radius: var(--radius-soft);
+            box-shadow: var(--shadow-clean);
+            transition: transform 0.3s ease;
         }
 
-        .feature-box:hover {
-            border-color: #e6ded4;
+        .card-learning:hover {
+            transform: translateY(-5px);
         }
 
-        .feature-box .icon-frame {
-            font-size: 2rem;
-            margin-bottom: 1.2rem;
-            display: inline-block;
+        .card-learning .icon-pill {
+            background: #ffffff;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
         }
 
-        .feature-box h3 {
+        .card-learning h3 {
             font-size: 1.25rem;
             margin-bottom: 0.8rem;
-            color: #2b2925;
+            color: var(--text-dark);
         }
 
-        .feature-box p {
+        .card-learning p {
             font-size: 0.98rem;
-            color: #5c574f;
-            line-height: 1.7;
+            color: var(--text-muted);
         }
 
-        /* --- GALERÍA VISUAL DE TRABAJOS --- */
-        .showcase-section {
-            background: #fdfcfb;
-            padding: 5rem 0;
-            border-top: 1px solid #edf0ee;
-            border-bottom: 1px solid #edf0ee;
+        /* --- GALERÍA COMPLETA DE TRABAJOS --- */
+        .gallery-wrapper {
+            background-color: var(--bg-soft);
+            padding: 5rem 1.5rem;
+            border-radius: 40px;
+            margin-bottom: 6rem;
         }
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2.5rem;
-            margin-top: 2rem;
         }
 
-        .gallery-item {
-            background: var(--card-bg);
-            border-radius: var(--radius);
+        .gallery-box {
+            background: #ffffff;
+            border-radius: var(--radius-soft);
             overflow: hidden;
-            box-shadow: var(--shadow-soft);
+            box-shadow: var(--shadow-clean);
         }
 
-        .gallery-item img {
+        .gallery-box img {
             width: 100%;
-            height: 380px;
+            height: 360px;
             object-fit: cover;
-            transition: transform 0.5s ease;
         }
 
-        .gallery-item:hover img {
-            transform: scale(1.03);
-        }
-
-        .gallery-item .caption {
+        .gallery-box .info-label {
             padding: 1.5rem;
             text-align: center;
             font-weight: 600;
-            color: #4a453e;
-            font-size: 1.1rem;
-            border-top: 1px solid #f4f1eb;
+            color: var(--text-dark);
+            font-size: 1.05rem;
         }
 
         /* --- BENEFICIOS --- */
-        .benefits-layout {
+        .grid-benefits {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
+            margin-bottom: 6rem;
         }
 
-        .benefit-card {
-            background: var(--card-bg);
-            padding: 2.5rem 2rem;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-soft);
-            position: relative;
+        .card-benefit {
+            padding: 2rem;
+            background: #ffffff;
+            border: 1px solid #f4eae4;
+            border-radius: var(--radius-soft);
         }
 
-        .benefit-card h4 {
-            font-size: 1.2rem;
-            color: var(--brand-green);
-            margin-bottom: 0.6rem;
-            font-weight: 700;
-        }
-
-        /* --- TEMARIO DE MÓDULOS EN LÍNEAS LIMPIAS --- */
-        .curriculum-container {
-            background: var(--card-bg);
-            padding: 3.5rem;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-soft);
-            margin: 4rem 0;
-        }
-
-        @media (max-width: 768px) { .curriculum-container { padding: 2rem 1.2rem; } }
-
-        .curriculum-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-
-        @media (max-width: 768px) { .curriculum-grid { grid-template-columns: 1fr; } }
-
-        .curriculum-module {
-            background: #faf9f6;
-            border-radius: 12px;
-            padding: 1.8rem;
-            border: 1px solid #edeae4;
-        }
-
-        .curriculum-module h4 {
-            color: #2b2925;
+        .card-benefit h4 {
+            color: #b87b66;
             font-size: 1.15rem;
-            margin-bottom: 0.8rem;
-            border-bottom: 2px solid #e6ded4;
-            padding-bottom: 0.4rem;
+            margin-bottom: 0.5rem;
         }
 
-        .curriculum-module ul {
-            list-style: none;
-        }
-
-        .curriculum-module ul li {
-            font-size: 0.98rem;
-            color: #5c574f;
-            margin-bottom: 0.4rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .curriculum-module ul li::before { content: "◦"; font-weight: bold; color: var(--accent-warm); font-size: 1.2rem; }
-
-        /* --- CUADRO DE URGENCIA AMIGABLE --- */
-        .urgency-soft-box {
-            background: #f5ebe0;
-            border-radius: var(--radius);
+        /* --- CONTADOR / DISPONIBILIDAD --- */
+        .urgency-container {
+            background: #fdfaf7;
+            border: 1px dashed var(--accent-cozy);
+            border-radius: var(--radius-soft);
             padding: 3rem 2rem;
             text-align: center;
-            margin: 5rem 0;
+            margin-bottom: 6rem;
         }
 
-        .counter-flex {
+        .timer-box {
             display: flex;
             justify-content: center;
             gap: 15px;
-            margin: 1.5rem 0;
+            margin: 2rem 0;
         }
 
-        .counter-slot {
-            background: var(--card-bg);
+        .timer-element {
+            background: #ffffff;
             padding: 0.8rem 1.5rem;
-            border-radius: 8px;
+            border-radius: 12px;
             font-size: 1.8rem;
             font-weight: 700;
-            color: #2b2925;
+            color: var(--text-dark);
             min-width: 90px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            box-shadow: var(--shadow-clean);
         }
 
-        .counter-slot span {
+        .timer-element span {
             display: block;
             font-size: 0.8rem;
-            color: #8c8273;
+            color: var(--text-muted);
             font-weight: normal;
             text-transform: uppercase;
             margin-top: 0.2rem;
         }
 
-        /* --- SECCIÓN BONOS TIPO TARJETAS DE DISEÑO --- */
-        .bono-modern-card {
-            background: var(--card-bg);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-soft);
-            padding: 3rem;
-            margin-bottom: 2.5rem;
+        /* --- MÓDULOS DEL TEMARIO --- */
+        .curriculum-box {
+            background: #ffffff;
+            border: 1px solid #f4eae4;
+            padding: 4rem 3rem;
+            border-radius: var(--radius-soft);
+            margin-bottom: 6rem;
+            box-shadow: var(--shadow-clean);
+        }
+
+        @media (max-width: 768px) { .curriculum-box { padding: 2rem 1.5rem; } }
+
+        .curriculum-flex {
             display: grid;
-            grid-template-columns: 1fr 2fr;
+            grid-template-columns: 1fr 1fr;
             gap: 2.5rem;
+        }
+
+        @media (max-width: 768px) { .curriculum-flex { grid-template-columns: 1fr; } }
+
+        .module-item {
+            background: var(--bg-soft);
+            border-radius: 14px;
+            padding: 2rem;
+        }
+
+        .module-item h4 {
+            color: var(--text-dark);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #ebdcd6;
+            padding-bottom: 0.5rem;
+        }
+
+        .module-item ul {
+            list-style: none;
+        }
+
+        .module-item ul li {
+            font-size: 0.98rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .module-item ul li::before { content: "✨"; font-size: 0.9rem; }
+
+        /* --- SECCIÓN BONOS MODERNOS (MÁS IMÁGENES) --- */
+        .bono-visual-card {
+            background: #ffffff;
+            border-radius: var(--radius-soft);
+            box-shadow: var(--shadow-clean);
+            border: 1px solid #f4eae4;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 3rem;
             align-items: center;
         }
 
         @media (max-width: 768px) {
-            .bono-modern-card { grid-template-columns: 1fr; padding: 2rem 1.5rem; gap: 1.5rem; text-align: center; }
+            .bono-visual-card { grid-template-columns: 1fr; padding: 2rem 1.5rem; gap: 2rem; text-align: center; }
         }
 
-        .bono-img {
+        .bono-visual-img {
             width: 100%;
-            height: 240px;
+            height: 260px;
             object-fit: cover;
-            border-radius: 12px;
+            border-radius: 14px;
         }
 
-        .bono-tag {
-            background: #edf0ee;
-            color: var(--brand-green);
+        .bono-visual-tag {
+            background: #f4eae4;
+            color: #b87b66;
             font-weight: 700;
-            padding: 0.3rem 1rem;
-            border-radius: 4px;
+            padding: 0.4rem 1.2rem;
+            border-radius: 6px;
             font-size: 0.8rem;
             display: inline-block;
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
-        .bono-val {
-            color: #a38a68;
+        .bono-visual-card h3 {
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .bono-visual-card p {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+        }
+
+        .bono-free-label {
+            color: #b87b66;
             font-weight: 600;
             font-size: 0.95rem;
-            margin-top: 1rem;
+            margin-top: 1.2rem;
         }
 
-        /* --- CAJA DE COMPRA COMPLETA --- */
-        .pricing-panel {
-            background: var(--card-bg);
-            border: 2px solid #e6ded4;
-            border-radius: 24px;
-            padding: 4rem 2rem;
+        /* --- CAJA DE COMPRA PRECIO --- */
+        .checkout-panel {
+            background: var(--bg-soft);
+            border-radius: 32px;
+            padding: 4.5rem 2rem;
             text-align: center;
-            box-shadow: var(--shadow-soft);
-            max-width: 780px;
+            max-width: 800px;
             margin: 6rem auto;
+            box-shadow: var(--shadow-clean);
         }
 
-        .old-price {
+        .price-old {
             text-decoration: line-through;
-            color: #a8a297;
-            font-size: 1.4rem;
+            color: #b3a7a2;
+            font-size: 1.3rem;
         }
 
-        .new-price {
-            font-size: 4.5rem;
+        .price-new {
+            font-size: 4.8rem;
             font-weight: 700;
-            color: #2b2925;
+            color: var(--text-dark);
             margin: 0.5rem 0 2rem 0;
+            line-height: 1;
         }
 
         /* --- TESTIMONIOS --- */
-        .review-box {
-            background: var(--card-bg);
-            padding: 2.5rem;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-soft);
+        .grid-reviews {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 6rem;
         }
 
-        /* --- GARANTÍA --- */
-        .guarantee-wrapper {
-            background: #f1eae1;
+        .review-card {
+            background: var(--bg-soft);
+            padding: 2.5rem;
+            border-radius: var(--radius-soft);
+        }
+
+        /* --- RECUADRO GARANTÍA --- */
+        .guarantee-box {
+            background: #f4eae4;
             padding: 3.5rem;
-            border-radius: var(--radius);
+            border-radius: var(--radius-soft);
             display: flex;
             align-items: center;
             gap: 3rem;
-            margin: 5rem 0;
+            margin-bottom: 6rem;
         }
 
-        @media (max-width: 768px) { .guarantee-wrapper { flex-direction: column; text-align: center; padding: 2rem 1.5rem; } }
+        @media (max-width: 768px) { .guarantee-box { flex-direction: column; text-align: center; padding: 2rem 1.5rem; } }
 
-        /* --- FAQ --- */
-        .faq-item {
-            background: var(--card-bg);
+        /* --- PREGUNTAS FRECUENTES --- */
+        .faq-card {
+            background: #ffffff;
+            border: 1px solid #f4eae4;
             padding: 1.8rem 2rem;
-            border-radius: var(--radius);
+            border-radius: 12px;
             margin-bottom: 1.2rem;
-            box-shadow: var(--shadow-soft);
+            box-shadow: var(--shadow-clean);
         }
 
-        .faq-item h4 { color: #2b2925; margin-bottom: 0.5rem; font-size: 1.1rem; }
-        .faq-item p { color: #5c574f; font-size: 0.98rem; }
+        .faq-card h4 { color: var(--text-dark); margin-bottom: 0.5rem; font-size: 1.1rem; }
+        .faq-card p { color: var(--text-muted); font-size: 0.98rem; }
     </style>
 </head>
 <body>
 
-    <!-- ADVERTENCIA DE TIEMPO -->
-    <div class="top-banner">
-        Aprovecha la oportunidad: 50% de descuento disponible solo por tiempo limitado
+    <!-- AVISO SUPERIOR INICIAL -->
+    <div class="announcement-bar">
+        Aprovecha la oportunidad: Cupos con el 50% de descuento disponibles por tiempo limitado
     </div>
 
-    <!-- SECCIÓN DE ENTRADA HERO -->
-    section class="hero">
-        <div class="hero-badge">Programa Online • Aprende a tu propio ritmo desde casa</div>
+    <!-- SECCIÓN HERO DE BIENVENIDA -->
+    <section class="hero-section">
+        <div class="hero-pill">Programa Online • Aprende desde casa a tu propio ritmo</div>
         <h1>En 14 días lograrás crear <span>piezas únicas en concreto</span> y descubrir cómo transformarlas en tu propio negocio</h1>
-        <p>Aprende detalladamente las mejores técnicas de diseño y aprovecha las tendencias decorativas actuales. No necesitas conocimientos previos.</p>
+        <p>Aprende detalladamente las mejores técnicas artesanales y aprovecha las tendencias decorativas actuales. Todo explicado desde cero sin necesidad de conocimientos previos.</p>
         
-        <div class="cta-container">
-            <a href="https://pay.hotmart.com/E100486464F?off=jbpevbxo&checkoutMode=10&bid=1781489881868" class="btn-organic" target="_blank" rel="noopener">
+        <div>
+            <a href="https://pay.hotmart.com/E100486464F?off=jbpevbxo&checkoutMode=10&bid=1781489881868" class="btn-cozy" target="_blank" rel="noopener">
                 Quiero unirme al programa hoy
             </a>
         </div>
     </section>
 
-    <!-- CUERPO DE LA PÁGINA -->
-    <div class="wrapper" style="padding-top: 1rem;">
+    <!-- CONTENEDOR CENTRAL DE LA PÁGINA -->
+    <div class="main-container">
 
-        <!-- BLOQUE INTRODUCTORIO CON IMAGEN -->
-        <div class="intro-block">
-            <div class="intro-text">
-                <h2>El arte decorativo en concreto está en auge</h2>
-                <p>Las piezas artesanales y minimalistas marcan tendencia en el diseño de interiores actual. Aprender a fabricar estos elementos no solo te permite crear productos de alta calidad y listos para decorar cualquier espacio, sino que también abre las puertas a un proyecto propio con una inversión inicial sumamente baja.</p>
+        <!-- BLOQUE INTRODUCTORIO CON IMAGEN EMBEBIDA -->
+        <div class="intro-visual-row">
+            <div class="intro-visual-text">
+                <h2 style="color: var(--text-dark);">El arte de la decoración en concreto está en auge</h2>
+                <p style="color: var(--text-muted);">Las piezas minimalistas y con texturas marcan una fuerte tendencia dentro del diseño de interiores contemporáneo. Aprender a fabricar estos elementos te permite crear productos de alta calidad listos para lucir o vender, abriendo las puertas a un proyecto rentable y muy amigable con tu presupuesto de inversión inicial.</p>
             </div>
-            <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80" alt="Ambiente decorativo con concreto" class="intro-img">
+            <!-- IMAGEN DE AMBIENTE ARTESANAL -->
+            <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80" alt="Decoración artesanal moderna" class="rounded-image">
         </div>
 
         <!-- QUÉ VAS A APRENDER -->
-        <h2 class="section-heading">¿Qué vas a <span>aprender</span>?</h2>
-        <div class="features-grid">
-            <div class="feature-box">
-                <span class="icon-frame">🏺</span>
-                <h3>Creación de Piezas Decorativas Únicas</h3>
-                <p>Aprenderás a crear piezas decorativas exclusivas como bandejas, jarrones, portavelas, topepuertas, joyeros, materas, incensarios y portaespejos.</p>
+        <h2 class="block-title">¿Qué vas a <span>aprender</span>?</h2>
+        <div class="grid-learning">
+            <div class="card-learning">
+                <div class="icon-pill">🏺</div>
+                <h3>Creación de Piezas Únicas</h3>
+                <p>Aprenderás a elaborar objetos decorativos de gran calidad como bandejas, jarrones, portavelas, topepuertas, joyeros, materas, incensarios y portaespejos.</p>
             </div>
-            <div class="feature-box">
-                <span class="icon-frame">🛠️</span>
-                <h3>Técnicas de Acabado Profesional</h3>
-                <p>Aprenderás a trabajar con diferentes metodologías de pulido y nivelación para lograr acabados suaves, duraderos y comerciales.</p>
+            <div class="card-learning">
+                <div class="icon-pill">🛠️</div>
+                <h3>Técnicas de Acabado Pulido</h3>
+                <p>Aprenderás a dominar los procesos de vaciado y nivelación fina para asegurar que cada una de tus piezas tenga un acabado suave y comercial.</p>
             </div>
-            <div class="feature-box">
-                <span class="icon-frame">🎨</span>
-                <h3>Personalización Estética</h3>
-                <p>Aprenderás a complementar y dar vida a tus creaciones aplicando pinturas de forma correcta, adaptándolas a los gustos de tus clientes.</p>
+            <div class="card-learning">
+                <div class="icon-pill">🎨</div>
+                <h3>Personalización y Color</h3>
+                <p>Aprenderás a intervenir estéticamente tus objetos aplicando pinturas de forma limpia para adaptarlos por completo a los gustos de tus clientes.</p>
             </div>
-            <div class="feature-box">
-                <span class="icon-frame">🌈</span>
+            <div class="card-learning">
+                <div class="icon-pill">🌈</div>
                 <h3>Efectos y Texturas Modernas</h3>
-                <p>Aprenderás a añadir color a la masa para dominar efectos en tendencia como el microterrazo, terrazo, granito y la técnica del swirling.</p>
+                <p>Aprenderás a añadir color desde la masa inicial para lograr efectos populares como el microterrazo, terrazo, granito y la técnica del swirling.</p>
             </div>
-            <div class="feature-box">
-                <span class="icon-frame">📊</span>
+            <div class="card-learning">
+                <div class="icon-pill">📊</div>
                 <h3>Gestión Financiera de Costos</h3>
-                <p>Aprenderás a calcular correctamente tus costos de producción y a definir precios competitivos que aseguren un margen saludable.</p>
+                <p>Aprenderás a estructurar de manera sencilla tus costos de insumos y a fijar precios de venta que te garanticen márgenes saludables.</p>
             </div>
-            <div class="feature-box">
-                <span class="icon-frame">📲</span>
-                <h3>Promoción en Redes Sociales</h3>
-                <p>Descubrirás cómo dar a conocer tu portafolio en canales digitales, construyendo una marca atractiva que conecte con compradores.</p>
+            <div class="card-learning">
+                <div class="icon-pill">📲</div>
+                <h3>Estrategia en Canales Digitales</h3>
+                <p>Descubrirás cómo exhibir de forma amigable tu portafolio de productos en redes sociales para conectar de manera orgánica con tus primeros compradores.</p>
             </div>
         </div>
 
-    </div> <!-- FIN WRAPPER CENTRAL -->
+    </div> <!-- FIN CONTAINER PRIMER BLOQUE -->
 
 
-    <!-- GALERÍA DE TRABAJOS (MAS VISUAL E IMÁGENES PREFERENTES) -->
-    <div class="showcase-section">
-        <div class="wrapper" style="padding: 0 1.5rem;">
-            <h2 class="section-heading">Diseños y acabados que <span>lograrás realizar:</span></h2>
+    <!-- GALERÍA DE DISEÑOS REALIZADOS (SECCIÓN ULTRA VISUAL) -->
+    <div class="gallery-wrapper">
+        <div class="main-container" style="padding: 0 1.5rem;">
+            <h2 class="block-title">Algunos de los diseños que <span>lograrás realizar:</span></h2>
             <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://manualidadesconestilo.github.io/Piezasdeconcreto/imagenes/imagen1.jpg" alt="Macetas y Portavelas de Diseño">
-                    <div class="caption">Macetas y Portavelas Minimalistas</div>
+                <div class="gallery-box">
+                    <img src="https://manualidadesconestilo.github.io/Piezasdeconcreto/imagenes/imagen1.jpg" alt="Macetas y Portavelas Artesanales">
+                    <div class="info-label">Macetas y Portavelas Minimalistas</div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://manualidadesconestilo.github.io/Piezasdeconcreto/imagenes/imagen2.jpg" alt="Kits y Bandejas de Concreto">
-                    <div class="caption">Bandejas Organizadoras Premium</div>
+                <div class="gallery-box">
+                    <img src="https://manualidadesconestilo.github.io/Piezasdeconcreto/imagenes/imagen2.jpg" alt="Kits y Bandejas Premium">
+                    <div class="info-label">Bandejas Organizadoras de Tendencia</div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://manualidadesconestilo.github.io/Piezasdeconcreto/imagenes/imagen3.jpg" alt="Acabados Pulidos y Coloridos">
-                    <div class="caption">Técnicas de Pigmentación y Texturas</div>
+                <div class="gallery-box">
+                    <img src="https://manualidadesconestilo.github.io/Piezasdeconcreto/imagenes/imagen3.jpg" alt="Técnicas de Pigmentación">
+                    <div class="info-label">Efectos de Coloración y Texturas Finas</div>
                 </div>
             </div>
         </div>
     </div>
 
 
-    <div class="wrapper">
+    <div class="main-container" style="padding-top: 0;">
 
         <!-- BENEFICIOS DEL CURSO -->
-        <h2 class="section-heading">Beneficios de estudiar con <span>nosotros:</span></h2>
-        <div class="benefits-layout">
-            <div class="benefit-card">
-                <h4>Acceso de por vida</h4>
-                <p>Disfruta del contenido de forma ilimitada. La plataforma estará disponible siempre para que repases cuando lo necesites.</p>
+        <h2 class="block-title">Beneficios de estudiar con <span>nosotros:</span></h2>
+        <div class="grid-benefits">
+            <div class="card-benefit">
+                <h4>Acceso Permanente</h4>
+                <p>Disfruta de las clases sin límites. La plataforma estará disponible de por vida para repasar cuando gustes.</p>
             </div>
-            <div class="benefit-card">
-                <h4>Flexibilidad absoluta</h4>
-                <p>Estudia en tus tiempos libres, adaptando las clases a tu rutina diaria sin presiones ni horarios fijos.</p>
+            <div class="card-benefit">
+                <h4>Flexibilidad en Horarios</h4>
+                <p>Estudia cómodamente desde tu hogar en el momento libre que mejor se adapte a tu rutina diaria.</p>
             </div>
-            <div class="benefit-card">
-                <h4>Acompañamiento cercano</h4>
-                <p>Resuelve todas tus dudas e inquietudes para asegurar que tus piezas tengan el acabado perfecto.</p>
+            <div class="card-benefit">
+                <h4>Acompañamiento en el Proceso</h4>
+                <p>Resuelve dudas técnicas para asegurar que tus primeras piezas queden perfectas y sin imperfecciones.</p>
             </div>
-            <div class="benefit-card">
-                <h4>Inversión eficiente</h4>
-                <p>Accede a un programa de capacitación completo a una fracción del costo de un taller presencial.</p>
+            <div class="card-benefit">
+                <h4>Inversión Eficiente</h4>
+                <p>Capacítate por completo con un programa detallado a una fracción del costo de un taller presencial.</p>
             </div>
-            <div class="benefit-card">
-                <h4>Retorno ágil</h4>
-                <p>Las habilidades comerciales adquiridas te permitirán recuperar lo invertido con tus primeras ventas.</p>
+            <div class="card-benefit">
+                <h4>Retorno a Corto Plazo</h4>
+                <p>La salida comercial de estos productos te permitirá recuperar lo invertido con tus primeras piezas vendidas.</p>
             </div>
-            <div class="benefit-card">
-                <h4>Certificación de participación</h4>
-                <p>Al completar el temario, obtendrás una constancia digital que avala tus horas de aprendizaje práctico.</p>
+            <div class="card-benefit">
+                <h4>Certificado Incluido</h4>
+                <p>Al completar el temario propuesto podrás descargar tu constancia digital de participación dentro del curso.</p>
             </div>
         </div>
 
-
-        <!-- CONTADOR DE DISPONIBILIDAD -->
-        <div class="urgency-soft-box">
-            <h3 style="font-size: 1.6rem; margin-bottom: 0.5rem; color: #2b2925;">Cupos de lanzamiento limitados</h3>
-            <p>Asegura tu ingreso al programa con el 50% de descuento y llévate todo el material de bonificación incluido.</p>
-            
-            <div class="counter-flex">
-                <div class="counter-slot">02<span>Horas</span></div>
-                <div class="counter-slot">41<span>Min</span></div>
-                <div class="counter-slot">46<span>Seg</span></div>
+        <!-- RELOJ / CAJA DE TIEMPO COZY -->
+        <div class="urgency-container">
+            <h3 style="font-size: 1.5rem; color: var(--text-dark); font-weight: 700;">Promoción de lanzamiento activa</h3>
+            <p style="color: var(--text-muted); margin-top: 0.3rem;">Asegura tu entrada hoy con el 50% de descuento y añade todo el material complementario gratis.</p>
+            <div class="timer-box">
+                <div class="timer-element">02<span>Horas</span></div>
+                <div class="timer-element">41<span>Minutos</span></div>
+                <div class="timer-element">46<span>Segundos</span></div>
             </div>
-            <p style="font-size: 0.95rem; color: #8c8273; font-weight: 600;">Inscripciones abiertas con tarifa preferencial</p>
+            <p style="font-size: 0.95rem; font-weight: 600; color: #b87b66;">Inscripciones habilitadas en tarifa especial</p>
         </div>
 
-
-        <!-- TEMARIO DETALLADO DE LOS MÓDULOS -->
-        <h2 class="section-heading">Estructura del Programa <span>Paso a Paso</span></h2>
-        <div class="curriculum-container">
-            <div class="curriculum-grid">
+        <!-- TEMARIO DETALLADO EXPANSIÓN PASO A PASO -->
+        <h2 class="block-title">Estructura del Programa <span>Paso a Paso</span></h2>
+        <div class="curriculum-box">
+            <div class="curriculum-flex">
                 
-                <div class="curriculum-module">
+                <div class="module-item">
                     <h4>Módulo 1 - Bienvenida</h4>
                     <ul>
                         <li>Introducción al universo del concreto creativo</li>
-                        <li>Cómo navegar la plataforma de estudio</li>
-                        <li>Soporte y comunidad de alumnos</li>
+                        <li>Cómo usar de forma óptima la plataforma de estudio</li>
+                        <li>Soporte e ingreso al canal de alumnos</li>
                     </ul>
                 </div>
 
-                <div class="curriculum-module">
+                <div class="module-item">
                     <h4>Módulos 2 al 4 - Fundamentos</h4>
                     <ul>
-                        <li>Materiales recomendados y herramientas</li>
-                        <li>Consideraciones de seguridad básicas</li>
-                        <li>Guía práctica de mezclas y proporciones exactas</li>
+                        <li>Herramientas recomendadas e insumos básicos</li>
+                        <li>Consideraciones de cuidado dentro del taller</li>
+                        <li>Guía definitiva de mezclas y proporciones exactas</li>
                     </ul>
                 </div>
 
-                <div class="curriculum-module">
-                    <h4>Módulos 5 al 7 - Producción y Lijado</h4>
+                <div class="module-item">
+                    <h4>Módulos 5 al 7 - Vaciado y Lijado</h4>
                     <ul>
-                        <li>Vaciado correcto empleando cemento gris</li>
-                        <li>Vaciado correcto empleando cemento blanco</li>
-                        <li>Técnicas esenciales de lijado para un tacto suave</li>
+                        <li>Técnicas de vaciado utilizando cemento gris</li>
+                        <li>Técnicas de vaciado utilizando cemento blanco</li>
+                        <li>Metodologías de lijado para un tacto suave y pulido</li>
                     </ul>
                 </div>
 
-                <div class="curriculum-module">
-                    <h4>Módulos 8 al 10 - Acabados y Proyectos</h4>
+                <div class="module-item">
+                    <h4>Módulos 8 al 10 - Protección</h4>
                     <ul>
-                        <li>Sellado correcto para proteger de manchas e hidratación</li>
-                        <li>Recomendaciones de desmolde efectivo</li>
-                        <li>Manos a la obra: Primeros proyectos volumétricos</li>
+                        <li>Sellado correcto contra humedad y manchas diarias</li>
+                        <li>Recomendaciones para un desmolde sin fisuras</li>
+                        <li>Primeros proyectos prácticos tridimensionales</li>
                     </ul>
                 </div>
 
-                <div class="curriculum-module">
+                <div class="module-item">
                     <h4>Módulos 11 y 12 - Marmoleados</h4>
                     <ul>
-                        <li>Proyecto: Incensario con efecto marmoleado artístico</li>
-                        <li>Proyecto: Base para espejo con pigmentación líquida</li>
+                        <li>Proyecto práctico: Incensario con efecto marmoleado</li>
+                        <li>Proyecto práctico: Base para espejo con pigmentación líquida</li>
                     </ul>
                 </div>
 
-                <div class="curriculum-module">
-                    <h4>Módulo 13 - Cofres y Contenedores</h4>
+                <div class="module-item">
+                    <h4>Módulo 13 - Contenedores</h4>
                     <ul>
-                        <li>Uso correcto de pigmentación seca en polvo</li>
-                        <li>Control de burbujas en piezas complejas</li>
-                        <li>Detalles de ensamble y terminaciones finas</li>
+                        <li>Uso correcto de pigmentaciones secas en polvo</li>
+                        <li>Técnicas para el control total de burbujas superficiales</li>
+                        <li>Ajustes de cierre y acabados finos comerciales</li>
                     </ul>
                 </div>
 
-                <div class="curriculum-module">
-                    <h4>Módulos 14 al 16 - Técnicas de Terrazo</h4>
+                <div class="module-item">
+                    <h4>Módulos 14 al 16 - Efecto Terrazo</h4>
                     <ul>
-                        <li>Proyecto: Maceta en microterrazo contemporáneo</li>
-                        <li>Proyecto: Bandeja de exhibición estilo terrazo clásico</li>
-                        <li>Proyecto: Posavasos pulidos en terrazo y granito</li>
+                        <li>Proyecto: Fabricación de maceta en microterrazo</li>
+                        <li>Proyecto: Bandeja decorativa estilo terrazo veneciano</li>
+                        <li>Proyecto: Posavasos lisos en terrazo y granito pulido</li>
                     </ul>
                 </div>
 
-                <div class="curriculum-module">
-                    <h4>Módulos 17 al 20 - Detalles Avanzados</h4>
+                <div class="module-item">
+                    <h4>Módulos 17 al 20 - Diseños Finos</h4>
                     <ul>
-                        <li>Aplicación y protección de laminilla dorada</li>
-                        <li>Efecto Swirling (hidrografía manual sobre concreto)</li>
-                        <li>Uso de moldes cotidianos y alternativos</li>
+                        <li>Aplicación y recubrimiento de laminilla dorada</li>
+                        <li>Efecto Swirling (hidrografía artística manual)</li>
+                        <li>Aprovechamiento creativo de moldes cotidianos</li>
                         <li>Decoración final fina mediante pintura acrílica</li>
                     </ul>
                 </div>
 
-                <div class="curriculum-module" style="grid-column: 1 / -1; background: #f2ede4;">
-                    <h4>Módulos 21 al 23 - Emprendimiento y Cierre</h4>
+                <div class="module-item" style="grid-column: 1 / -1; background: #f4eae4;">
+                    <h4>Módulos 21 al 23 - Desarrollo de Negocio y Certificación</h4>
                     <ul>
-                        <li><strong>Plan de negocio:</strong> Costos, empaques y envíos seguros de tus piezas artísticas.</li>
-                        <li><strong>Marketing digital:</strong> Cómo fotografiar y exhibir tus creaciones en redes sociales.</li>
-                        <li><strong>Finalización:</strong> Proceso de descarga de tu certificado de participación.</li>
+                        <li><strong>Tu propia marca:</strong> Estructura de precios, empaquetados amigables y envíos seguros.</li>
+                        <li><strong>Promoción digital:</strong> Ideas prácticas para fotografiar y lucir tus piezas en redes sociales.</li>
+                        <li><strong>Graduación:</strong> Proceso para la obtención de tu certificado de participación final.</li>
                     </ul>
                 </div>
 
             </div>
         </div>
 
-
-        <!-- SECCIÓN DE 7 BONOS REORGANIZADOS E IMÁGENES CORRESPONDIENTES -->
-        <h2 class="section-heading">Material complementario <span>incluido sin costo:</span></h2>
-        <div class="bonos-wrapper">
+        <!-- SECCIÓN DE LOS 7 BONOS COMPLETOS Y MUY VISUALES -->
+        <h2 class="block-title">Material complementario <span>incluido sin costo:</span></h2>
+        <div class="bonos-visual-list">
             
             <!-- Bono 1 -->
-            <div class="bono-modern-card">
-                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=400&q=80" alt="Pigmentos" class="bono-img">
+            <div class="bono-visual-card">
+                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=400&q=80" alt="Pigmentos" class="bono-visual-img">
                 <div>
-                    <div class="bono-tag">Bono Especial 1</div>
+                    <div class="bono-visual-tag">Bono Especial 1</div>
                     <h3>Clase: Dominio de Pigmentos Secos y Líquidos</h3>
-                    <p>Aprende las proporciones ideales para colorear el concreto desde la mezcla sin alterar su resistencia, logrando tonos estables y combinaciones armónicas.</p>
-                    <div class="bono-val">Incluido de forma gratuita</div>
+                    <p>Aprende las proporciones precisas para teñir la masa desde el mezclado sin alterar la resistencia de la pieza, asegurando acabados uniformes y tonos estables.</p>
+                    <div class="bono-free-label">Incluido de forma gratuita</div>
                 </div>
             </div>
 
             <!-- Bono 2 -->
-            <div class="bono-modern-card">
-                <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=400&q=80" alt="Efecto Swirling" class="bono-img">
+            <div class="bono-visual-card">
+                <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=400&q=80" alt="Técnica Swirling" class="bono-visual-img">
                 <div>
-                    <div class="bono-tag">Bono Especial 2</div>
+                    <div class="bono-visual-tag">Bono Especial 2</div>
                     <h3>Taller Práctico: Técnica Swirling</h3>
-                    <p>Descubre cómo generar patrones orgánicos y efectos de vetas de color en movimiento sobre la superficie del objeto, dándole una apariencia de lujo.</p>
-                    <div class="bono-val">Incluido de forma gratuita</div>
+                    <p>Descubre cómo crear hermosas vetas de color entrelazadas sobre la superficie del objeto, logrando un patrón orgánico exclusivo e imposible de replicar de forma exacta.</p>
+                    <div class="bono-free-label">Incluido de forma gratuita</div>
                 </div>
             </div>
 
             <!-- Bono 3 -->
-            <div class="bono-modern-card">
-                <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=400&q=80" alt="Pintura acrilica" class="bono-img">
+            <div class="bono-visual-card">
+                <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=400&q=80" alt="Pinturas Acrílicas" class="bono-visual-img">
                 <div>
-                    <div class="bono-tag">Bono Especial 3</div>
-                    <h3>Guía de Personalización con Acrílicos</h3>
-                    <p>Técnicas sencillas para trazar líneas de precisión, patrones geométricos o detalles dorados sobre tus piezas una vez secas para multiplicar su valor de mercado.</p>
-                    <div class="bono-val">Incluido de forma gratuita</div>
+                    <div class="bono-visual-tag">Bono Especial 3</div>
+                    <h3>Guía de Intervención Estética con Acrílicos</h3>
+                    <p>Consejos prácticos para trazar líneas finas, patrones geométricos equilibrados o detalles metálicos que sumen un valor estético superior a tus productos terminados.</p>
+                    <div class="bono-free-label">Incluido de forma gratuita</div>
                 </div>
             </div>
 
             <!-- Bono 4 -->
-            <div class="bono-modern-card">
-                <img src="https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?auto=format&fit=crop&w=400&q=80" alt="Negocio digital" class="bono-img">
+            <div class="bono-visual-card">
+                <img src="https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?auto=format&fit=crop&w=400&q=80" alt="Redes Sociales" class="bono-visual-img">
                 <div>
-                    <div class="bono-tag">Bono Especial 4</div>
+                    <div class="bono-visual-tag">Bono Especial 4</div>
                     <h3>Lecciones de Posicionamiento y Venta Digital</h3>
-                    <p>Aprende las bases para abrir el perfil de tu marca, tomar fotografías atractivas con luz natural y presentar tus piezas de forma atractiva en Instagram o Facebook.</p>
-                    <div class="bono-val">Incluido de forma gratuita</div>
+                    <p>Aprende a estructurar un perfil de marca estético, tomar fotografías atractivas con luz de día y redactar textos sencillos que atraigan seguidores e interesados.</p>
+                    <div class="bono-free-label">Incluido de forma gratuita</div>
                 </div>
             </div>
 
             <!-- Bono 5 -->
-            <div class="bono-modern-card">
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80" alt="Terrazo" class="bono-img">
+            <div class="bono-visual-card">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80" alt="Chips de Terrazo" class="bono-visual-img">
                 <div>
-                    <div class="bono-tag">Bono Especial 5</div>
-                    <h3>Especialización: Elaboración de Chips para Terrazo</h3>
-                    <p>Paso a paso para fabricar tus propias incrustaciones de color, triturarlas y agregarlas a la mezcla base para obtener el cotizado acabado de terrazo veneciano.</p>
-                    <div class="bono-val">Incluido de forma gratuita</div>
+                    <div class="bono-visual-tag">Bono Especial 5</div>
+                    <h3>Especialización: Fabricación de Chips para Terrazo</h3>
+                    <p>El paso a paso ordenado para producir tus propios fragmentos de color, triturarlos finamente e integrarlos a tus bases para lograr el demandado acabado italiano.</p>
+                    <div class="bono-free-label">Incluido de forma gratuita</div>
                 </div>
             </div>
 
             <!-- Bono 6 -->
-            <div class="bono-modern-card">
-                <img src="https://images.unsplash.com/photo-1530026405186-ed1ea0ac7a63?auto=format&fit=crop&w=400&q=80" alt="Proveedores" class="bono-img">
+            <div class="bono-visual-card">
+                <img src="https://images.unsplash.com/photo-1530026405186-ed1ea0ac7a63?auto=format&fit=crop&w=400&q=80" alt="Proveedores" class="bono-visual-img">
                 <div>
-                    <div class="bono-tag">Bono Especial 6</div>
-                    <h3>Directorio de Proveedores Recomendados</h3>
-                    <p>Un listado estructurado para guiarte en la adquisición de materiales de calidad, moldes idóneos y aditivos idóneos según diferentes regiones.</p>
-                    <div class="bono-val">Incluido de forma gratuita</div>
+                    <div class="bono-visual-tag">Bono Especial 6</div>
+                    <h3>Directorio de Proveedores e Insumos</h3>
+                    <p>Una lista de sugerencias diseñada para facilitarte la compra de materiales de base correctos, moldes idóneos y aditivos útiles dependiendo de tu ubicación geográfica.</p>
+                    <div class="bono-free-label">Incluido de forma gratuita</div>
                 </div>
             </div>
 
             <!-- Bono 7 -->
-            <div class="bono-modern-card" style="background: #faf6f0; border: 1px solid #e3dac9;">
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=80" alt="Comunidad" class="bono-img">
+            <div class="bono-visual-card" style="background: #faf5f2; border: 1px solid #ebd8d0;">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=80" alt="Grupo de Alumnos" class="bono-visual-img">
                 <div>
-                    <div class="bono-tag" style="background: var(--accent-warm); color: white;">Soporte Premium</div>
-                    <h3>Acceso a la Comunidad de Aprendizaje</h3>
-                    <p>Forma parte de nuestro canal exclusivo de consulta de alumnos, un espacio idóneo para compartir resultados, resolver dudas técnicas y recibir retroalimentación continua.</p>
-                    <div class="bono-val">Acceso permanente incluido</div>
+                    <div class="bono-visual-tag" style="background: var(--accent-cozy); color: #ffffff;">Soporte Compartido</div>
+                    <h3>Acceso a la Comunidad Interna de Alumnos</h3>
+                    <p>Únete a un espacio amigable de consulta mutua donde podrás compartir el avance de tus piezas decorativas, resolver dudas del día a día y ver el crecimiento de tus compañeros.</p>
+                    <div class="bono-free-label">Acceso permanente incluido</div>
                 </div>
             </div>
 
         </div>
 
-
-        <!-- CAJA DE OFERTA / INSCRIPCIÓN -->
-        <div class="pricing-panel">
-            <h3 style="font-size: 1.6rem; color: #2b2925; font-weight: 700; text-transform: uppercase;">Inscripción Completa al Programa</h3>
-            <p style="color: #6b645a; margin: 0.5rem 0 2rem 0;">Todo el contenido práctico, plantillas de cálculo y bonificaciones con un único acceso definitivo.</p>
+        <!-- PANEL FINAL DE PRECIO Y CHECKOUT SELECCIONADO -->
+        <div class="checkout-panel">
+            <h3 style="font-size: 1.6rem; color: var(--text-dark); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Acceso Completo al Programa</h3>
+            <p style="color: var(--text-muted); margin: 0.5rem 0 2rem 0;">Todas las videolecciones estructuradas, guías descargables y bonos de regalo con un único pago.</p>
             
-            <div class="old-price">Precio regular: $150 USD</div>
-            <div class="new-price">$37 USD</div>
+            <div class="price-old">Precio regular: $150 USD</div>
+            <div class="price-new">$37 USD</div>
             
-            <div class="cta-container">
-                <!-- LINK DE HOTMART ACTUALIZADO COMPLETO -->
-                <a href="https://pay.hotmart.com/E100486464F?off=jbpevbxo&checkoutMode=10&bid=1781489881868" class="btn-organic" target="_blank" rel="noopener" style="display: block; max-width: 500px; margin: 0 auto;">
+            <div style="margin-top: 2rem;">
+                <!-- BOTÓN CON LINK DE REDIRECCIÓN EXACTO REQUERIDO -->
+                <a href="https://pay.hotmart.com/E100486464F?off=jbpevbxo&checkoutMode=10&bid=1781489881868" class="btn-cozy" target="_blank" rel="noopener" style="display: block; max-width: 500px; margin: 0 auto;">
                     Inscribirme al programa ahora
                 </a>
             </div>
-            
-            <p style="font-size: 0.85rem; color: #8c8273; margin-top: 2rem;">🔒 Pago procesado de manera segura. Acceso inmediato enviado a tu correo.</p>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 2rem;">🔒 Entorno de inscripción seguro. Tu acceso se envía de inmediato al correo.</p>
         </div>
 
-
-        <!-- REVISIONES / COMPARTIR EXPERIENCIAS -->
-        <h2 class="section-heading">Experiencias de <span>nuestros estudiantes:</span></h2>
-        <div class="benefits-layout" style="margin-bottom: 4rem;">
-            <div class="review-box">
-                <div style="color: var(--accent-warm); margin-bottom: 0.8rem;">★★★★★</div>
-                <p style="font-style: italic; color: #5c574f;">"El sistema de enseñanza es claro y ordenado. Logré realizar mis primeros contenedores ornamentales sin imperfecciones superficiales desde los primeros intentos."</p>
-                <h5 style="margin-top: 1.2rem; color: #2b2925; font-weight: 600;">Mariana G.</h5>
+        <!-- EXPERIENCIAS DE ALUMNOS -->
+        <h2 class="block-title">Experiencias de <span>nuestros alumnos:</span></h2>
+        <div class="grid-reviews">
+            <div class="review-card">
+                <div style="color: var(--accent-cozy); margin-bottom: 0.8rem; font-size: 1.1rem;">★★★★★</div>
+                <p style="font-style: italic; color: var(--text-muted);">"El paso a paso es sumamente fácil de seguir. Logré moldear mis primeros portavelas pulidos y limpios de burbujas en mi primera semana de prácticas."</p>
+                <h5 style="margin-top: 1.2rem; color: var(--text-dark); font-weight: 600;">Mariana G.</h5>
             </div>
-            <div class="review-box">
-                <div style="color: var(--accent-warm); margin-bottom: 0.8rem;">★★★★★</div>
-                <p style="font-style: italic; color: #5c574f;">"La orientación sobre la determinación de costos resultó clave para ordenar mi catálogo de productos y definir mis precios con total seguridad."</p>
-                <h5 style="margin-top: 1.2rem; color: #2b2925; font-weight: 600;">Lorena K.</h5>
+            <div class="review-card">
+                <div style="color: var(--accent-cozy); margin-bottom: 0.8rem; font-size: 1.1rem;">★★★★★</div>
+                <p style="font-style: italic; color: var(--text-muted);">"Los consejos prácticos de organización y costos me dieron la confianza necesaria para ordenar los productos e iniciar un catálogo propio."</p>
+                <h5 style="margin-top: 1.2rem; color: var(--text-dark); font-weight: 600;">Lorena K.</h5>
             </div>
-            <div class="review-box">
-                <div style="color: var(--accent-warm); margin-bottom: 0.8rem;">★★★★★</div>
-                <p style="font-style: italic; color: #5c574f;">"Aprecio la precisión en los tiempos de mezclado y las recomendaciones de insumos básicos. Un curso bien enfocado al desarrollo práctico."</p>
-                <h5 style="margin-top: 1.2rem; color: #2b2925; font-weight: 600;">Andrea M.</h5>
+            <div class="review-card">
+                <div style="color: var(--accent-cozy); margin-bottom: 0.8rem; font-size: 1.1rem;">★★★★★</div>
+                <p style="font-style: italic; color: var(--text-muted);">"Aprecio mucho la claridad en los tiempos de secado y los consejos para usar moldes alternativos. Ideal si estás buscando aprender desde casa."</p>
+                <h5 style="margin-top: 1.2rem; color: var(--text-dark); font-weight: 600;">Andrea M.</h5>
             </div>
         </div>
 
-
-        <!-- POLÍTICA DE GARANTÍA LIBRE DE RIESGO -->
-        <div class="guarantee-wrapper">
+        <!-- RESPALDO / GARANTÍA -->
+        <div class="guarantee-box">
             <span style="font-size: 3.5rem; line-height: 1;">🛡️</span>
             <div>
-                <h3 style="font-size: 1.4rem; color: #2b2925; font-weight: 700;">Garantía de Satisfacción de 7 Días</h3>
-                <p style="color: #5c574f; margin-top: 0.5rem; font-size: 1rem;">Revisa las lecciones y pon a prueba las primeras técnicas. Si consideras que el contenido no cumple con tus expectativas de aprendizaje, cuentas con un respaldo de devolución íntegra de tu inscripción dentro de los primeros 7 días.</p>
+                <h3 style="font-size: 1.3rem; color: var(--text-dark); font-weight: 700;">Garantía de Satisfacción por 7 Días</h3>
+                <p style="color: var(--text-muted); margin-top: 0.5rem; font-size: 0.98rem;">Explora los videos iniciales y pon a prueba las metodologías de mezcla. Si consideras que el curso no se adapta del todo a tus metas de aprendizaje, dispones de un marco de 7 días completos para tramitar una devolución directa de tu inscripción.</p>
             </div>
         </div>
 
-
-        <!-- PREGUNTAS FRECUENTES -->
-        <h2 class="section-heading">Preguntas <span>Frecuentes</span></h2>
-        <div class="faq-container">
-            <div class="faq-item">
-                <h4>¿Cómo recibiré el acceso al material de estudio?</h4>
-                <p>Una vez completado el registro en el panel de Hotmart, el sistema te enviará una confirmación inmediata por correo electrónico con tus credenciales de acceso para entrar a la plataforma de lecciones.</p>
+        <!-- PREGUNTAS FRECUENTES CORREGIDAS Y LIMPIAS -->
+        <h2 class="block-title">Preguntas <span>Frecuentes</span></h2>
+        <div class="faq-list">
+            <div class="faq-card">
+                <h4>¿Cómo recibiré el acceso a los contenidos?</h4>
+                <p>Inmediatamente después de validar tu registro en la pasarela de Hotmart, el sistema te remitirá de forma automática una clave individual a tu correo para acceder directamente a la plataforma de aprendizaje.</p>
             </div>
-            <div class="faq-item">
-                <h4>No poseo experiencia con mezclas o cementos, ¿puedo tomarlo?</h4>
-                <p>Sí, la programación del contenido parte desde las nociones y conceptos fundamentales, explicando de manera sencilla las proporciones e insumos necesarios para que puedas avanzar de manera fluida.</p>
+            <div class="faq-card">
+                <h4>No poseo conocimientos sobre cementos o manualidades, ¿puedo tomarlo?</h4>
+                <p>Sí, la curva de aprendizaje se encuentra estructurada para guiarte de manera amigable paso a paso, partiendo desde los conceptos básicos de proporciones y materiales.</p>
             </div>
-            <div class="faq-item">
-                <h4>¿El pago requiere renovaciones periódicas?</h4>
-                <p>No, se trata de una inscripción de pago único. Tendrás derecho a consultar los videos de manera permanente, incluyendo los complementos que se incorporen en adelante.</p>
+            <div class="faq-card">
+                <h4>¿La inscripción requiere de abonos o mensualidades posteriores?</h4>
+                <p>No, se trata de una inscripción de pago único definitivo que te garantiza el derecho de consulta de manera ilimitada en el tiempo.</p>
             </div>
-            <div class="faq-item">
-                <h4>¿Qué medios de transacción se encuentran habilitados?</h4>
-                <p>La pasarela segura permite transacciones mediante tarjetas de crédito, débito, alternativas de efectivo locales según tu ubicación (como OXXO o Baloto) y PayPal.</p>
+            <div class="faq-card">
+                <h4>¿Qué métodos de transacción se encuentran disponibles?</h4>
+                <p>El portal procesa transacciones empleando tarjetas de crédito, débito, alternativas de efectivo locales correspondientes según tu país (como OXXO, Baloto, etc.) y PayPal.</p>
             </div>
         </div>
 
-    </div> <!-- FIN WRAPPER GENERAL -->
+    </div> <!-- FIN CONTENEDOR WRAPPER -->
 
-    <!-- SECCIÓN DE CIERRE LEGAL -->
-    <footer style="background: #2b2925; color: #8c857b; text-align: center; padding: 3rem 1.5rem; font-size: 0.85rem; border-top: 1px solid #edeae4;">
-        <p style="max-width: 900px; margin: 0 auto; line-height: 1.6;">Este sitio web informativo no forma parte de la plataforma comercial de Facebook o Facebook Inc. Así mismo, este espacio no cuenta con el respaldo directo de Google LLC. Todos los derechos comerciales e industriales de las marcas mencionadas pertenecen a sus respectivos titulares.</p>
-        <p style="margin-top: 1.5rem; color: #edeae4; font-weight: 600;">&copy; 2026 Manualidades con Estilo. Todos los derechos reservados.</p>
+    <!-- FOOTER LEGAL DE REDES -->
+    <footer style="background: #ffffff; color: #999999; text-align: center; padding: 3.5rem 1.5rem; font-size: 0.85rem; border-top: 1px solid #f4eae4;">
+        <p style="max-width: 900px; margin: 0 auto; line-height: 1.6;">Este sitio de carácter informativo no forma parte del ecosistema corporativo de Facebook o Facebook Inc. Asimismo, este espacio web no cuenta con la aprobación o patrocinio directo de Google LLC. Todos los derechos sobre marcas comerciales citadas pertenecen de forma exclusiva a sus respectivos titulares.</p>
+        <p style="margin-top: 2rem; color: var(--text-dark); font-weight: 600;">&copy; 2026 Manualidades con Estilo. Todos los derechos reservados.</p>
     </footer>
 
 </body>
