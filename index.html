@@ -128,33 +128,6 @@
             color: var(--accent-cozy);
         }
 
-        /* --- INTRODUCCIÓN VISUAL --- */
-        .intro-visual-row {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 4rem;
-            align-items: center;
-            margin-bottom: 6rem;
-        }
-
-        @media (max-width: 768px) {
-            .intro-visual-row { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
-        }
-
-        .intro-visual-text h2 {
-            font-size: 2.2rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.3;
-        }
-
-        .rounded-image {
-            width: 100%;
-            height: 420px;
-            object-fit: cover;
-            border-radius: var(--radius-soft);
-            box-shadow: var(--shadow-clean);
-        }
-
         /* --- QUÉ VAS A APRENDER --- */
         .grid-learning {
             display: grid;
@@ -485,16 +458,6 @@
     <!-- CONTENEDOR CENTRAL DE LA PÁGINA -->
     <div class="main-container">
 
-        <!-- BLOQUE INTRODUCTORIO CON IMAGEN EMBEBIDA -->
-        <div class="intro-visual-row">
-            <div class="intro-visual-text">
-                <h2 style="color: var(--text-dark);">El arte de la decoración en concreto está en auge</h2>
-                <p style="color: var(--text-muted);">Las piezas minimalistas y con texturas marcan una fuerte tendencia dentro del diseño de interiores contemporáneo. Aprender a fabricar estos elementos te permite crear productos de alta calidad listos para lucir o vender, abriendo las puertas a un proyecto rentable y muy amigable con tu presupuesto de inversión inicial.</p>
-            </div>
-            <!-- IMAGEN DE AMBIENTE ARTESANAL -->
-            <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80" alt="Decoración artesanal moderna" class="rounded-image">
-        </div>
-
         <!-- QUÉ VAS A APRENDER -->
         <h2 class="block-title">¿Qué vas a <span>aprender</span>?</h2>
         <div class="grid-learning">
@@ -521,7 +484,7 @@
             <div class="card-learning">
                 <div class="icon-pill">📊</div>
                 <h3>Gestión Financiera de Costos</h3>
-                <p>Aprenderás a estructurar de manera sencilla tus costos de insumos y a fijar precios de venta que te garanticen márgenes saludables.</p>
+                <p>Aprenderás a ajustar de manera sencilla tus costos de insumos y a fijar precios de venta que te garanticen márgenes saludables.</p>
             </div>
             <div class="card-learning">
                 <div class="icon-pill">📲</div>
