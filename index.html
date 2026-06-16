@@ -205,4 +205,80 @@
       margin: 2rem 0;
     }
 
-    .gallery-grid
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .gallery-box {
+      background: #ffffff;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-box:hover {
+      transform: scale(1.03);
+    }
+
+    .gallery-box img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-box .info-label {
+      padding: 1.5rem;
+      text-align: center;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+
+    .grid-benefits {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .card-benefit {
+      padding: 2.5rem 2rem;
+      background: #ffffff;
+      border: 1px solid #f4eae4;
+      border-radius: var(--radius);
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .checkout-panel {
+      background: #ffffff;
+      border-radius: 32px;
+      padding: 4.5rem 2.5rem;
+      text-align: center;
+      max-width: 800px;
+      margin: 6rem auto 0 auto;
+      box-shadow: 0 30px 70px rgba(220,167,148,0.16);
+      border-top: 8px solid var(--accent-main);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="announcement-bar">
+    ¡Aprovecha el descuento especial de lanzamiento disponible hoy!
+  </div>
+
+  <header>
+    <nav>
+      <h1>Piezas de Concreto</h1>
+      <ul>
+        <li><a href="#">Inicio</a></li>
